@@ -1,0 +1,6463 @@
+<!doctype html>
+<html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="Biofyzika – precvičovanie otázok s viacerými tvrdeniami."><title>Biofyzika by Mony</title><meta name="apple-mobile-web-app-title" content="Biofyzika"><link rel="apple-touch-icon" href="biofyzika-ikonka.png"><link rel="icon" type="image/png" href="biofyzika-ikonka.png"><style>:root{font-family:Arial,Helvetica,sans-serif;color:#292724;background:#f5f4ef;font-size:16px;line-height:1.5;--paper:#faf9f5;--soft:#eeede8;--row:#e5e4de;--line:#d0cec5;--brand:#a23d42;--muted:#68645d}*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button{cursor:pointer;padding:10px 15px;border:1px solid var(--line);background:var(--paper);color:inherit;border-radius:3px}button:hover:not(:disabled){filter:brightness(.96)}button:disabled{opacity:.45;cursor:default}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #557fbc;outline-offset:3px}button.primary{background:var(--brand);border-color:var(--brand);color:white}button.selected{background:#292724;color:var(--paper);border-color:#292724}[hidden]{display:none!important}.app{max-width:1200px;margin:32px auto;padding:28px;background:var(--paper);border:1px solid var(--line);border-radius:6px;min-height:550px}header{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.brand{font-weight:700;letter-spacing:.1em;border:0;padding:0;background:transparent}.subtitle{font-size:13px;color:var(--muted)}.main-tabs{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:16px}.intro{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:26px 0}.intro p{color:var(--muted);margin:10px 0}h1{font:700 29px/1.25 Georgia,serif;margin:0 0 12px}h2{font:700 22px/1.45 Georgia,serif;margin:0 0 25px}.intro button{flex-shrink:0}.settings{display:flex;align-items:end;gap:18px;flex-wrap:wrap;padding:20px;background:var(--soft);border:1px solid var(--line)}.settings label{display:flex;flex-direction:column;gap:7px;font-size:13px}.settings select{padding:10px;max-width:100%;border:1px solid var(--line);background:var(--paper);color:inherit;border-radius:3px;font-size:15px}.settings .check-setting{flex-direction:row;align-items:center;min-height:43px}.check-setting input{accent-color:var(--brand);width:18px;height:18px}.all-row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:22px 0}.all-row span,.footnote{font-size:13px;color:var(--muted)}.category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.category-card{border:1px solid var(--line);padding:20px;background:var(--soft);display:flex;flex-direction:column}.category-card .eyebrow{color:var(--muted);font-size:12px;letter-spacing:.04em}.category-card h2{font-size:19px;line-height:1.4;margin:8px 0 18px}.card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}.card-actions button{font-size:13px}.footnote{margin-top:22px}.resume{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px;border-left:4px solid var(--brand);background:var(--soft);margin-bottom:20px}.toolbar{display:flex;gap:16px;align-items:center;margin:24px 0;flex-wrap:wrap}.toolbar>div{flex:1;min-width:150px;font-size:13px}.topic{display:block;color:var(--muted)}.timer{font-variant-numeric:tabular-nums;border:1px solid var(--line);padding:8px 12px;font-size:14px}.timer.urgent{color:#922f36;border-color:#922f36}.layout{display:grid;grid-template-columns:158px minmax(0,1fr);gap:20px;align-items:start}aside{background:var(--soft);border:1px solid var(--line);padding:10px;font-family:Georgia,serif}.question-no{background:var(--brand);color:white;padding:7px 10px;margin-bottom:12px}aside p{margin:10px 0;font-size:14px}.paper{background:var(--soft);border:1px solid var(--line);padding:24px}#answer-table{width:100%;border-collapse:collapse;font:17px/1.5 Georgia,serif;table-layout:fixed}#answer-table th{font-size:14px;text-align:center;background:var(--paper);padding:12px 3px}#answer-table .choice{width:85px}#answer-table .statement-head{text-align:left;padding-left:13px}#answer-table td{padding:0;border-bottom:2px solid var(--soft)}#answer-table tbody tr:nth-child(odd){background:var(--row)}#answer-table tbody tr:nth-child(even){background:var(--paper)}.answer-label{display:flex;align-items:center;justify-content:center;min-height:50px;width:100%;cursor:pointer}.answer-label input{width:18px;height:18px;accent-color:var(--brand)}#answer-table .statement{padding:11px 13px;overflow-wrap:anywhere}#answer-table tr.good{background:#e0eddf!important}#answer-table tr.bad{background:#f5dede!important}.row-feedback{display:block;font:13px/1.5 Arial,sans-serif;margin-top:5px}.question-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}button.saved{background:#fff0c9;border-color:#b99a4d}#feedback{font-size:14px;margin-top:14px}.quiz-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:25px}.quiz-nav button{font-size:13px;text-transform:uppercase;letter-spacing:.025em}#counter{font-size:13px;color:var(--muted)}.session-footer{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:13px}.notice{padding:14px 18px;margin:18px 0;border:1px solid var(--line)}.warning{background:#fff1d3;border-color:#d4b56b}.score-panel{background:var(--soft);padding:28px;display:flex;flex-direction:column;gap:10px;border-left:5px solid var(--brand);margin-top:25px}#score{font-size:38px;font-family:Georgia,serif}.results-actions{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}.result-table{width:100%;border-collapse:collapse;font-size:14px}.result-table th,.result-table td{padding:12px 10px;text-align:left;border-bottom:1px solid var(--line)}.result-table td:last-child{white-space:nowrap}dialog{max-width:520px;width:calc(100% - 32px);padding:28px;border:1px solid var(--line);background:var(--paper);color:inherit;border-radius:6px}dialog::backdrop{background:#0007}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:700px){.app{margin:12px;padding:18px}.intro{align-items:flex-start;flex-direction:column;gap:8px}.category-grid{grid-template-columns:1fr}.settings{padding:14px}.settings label{max-width:100%}.layout{grid-template-columns:1fr;gap:12px}aside{display:flex;align-items:center;gap:14px;flex-wrap:wrap}.question-no{margin:0}aside p{margin:0}.paper{padding:18px 12px}h2{font-size:19px}#answer-table{font-size:16px}#answer-table .choice{width:72px}#answer-table .statement{padding:9px}.quiz-nav #counter{order:3;width:100%;text-align:center}.quiz-nav button{padding:11px 9px;font-size:12px}.session-footer{align-items:flex-start;flex-direction:column}.resume{align-items:flex-start;flex-direction:column}.question-actions button{flex:1}.timer{margin-left:auto}.toolbar>div{order:3;flex-basis:100%}.result-table{font-size:13px}}
+@media(max-width:380px){.app{margin:0;padding:12px;border-radius:0}.main-tabs button{font-size:14px}.paper{padding:15px 7px}#answer-table .choice{width:65px}#answer-table th{font-size:12px}.quiz-nav button{font-size:11px;padding:10px 7px}h1{font-size:25px}}
+
+.brand .signature{font-weight:400;font-style:italic;letter-spacing:0;font-size:.85em;margin-left:.35em;white-space:nowrap}.intro-title{font:600 20px/1.5 Arial,Helvetica,sans-serif;margin:0}
+
+.question-progress{margin:0 0 22px}.question-progress label{display:block;font:13px/1.5 Arial,Helvetica,sans-serif;color:var(--muted);margin-bottom:8px}.question-progress progress{display:block;width:100%;height:6px;border:0;border-radius:6px;overflow:hidden;appearance:none;-webkit-appearance:none;background:var(--line);color:var(--brand);accent-color:var(--brand)}.question-progress progress::-webkit-progress-bar{background:var(--line);border-radius:6px}.question-progress progress::-webkit-progress-value{background:var(--brand);border-radius:6px}.question-progress progress::-moz-progress-bar{background:var(--brand);border-radius:6px}
+
+.answer-label input.correct-answer-ring{outline:2px solid #7d9d7b;outline-offset:1px;border-radius:50%;opacity:1}
+</style></head>
+<body><main class="app">
+<header><button id="brand" class="brand" aria-label="Biofyzika – úvod">BIOFYZIKA <em class="signature">by Mony</em></button></header>
+<nav class="main-tabs" aria-label="Hlavné kategórie"><button id="main-tab" class="selected">Viacero tvrdení · 281 otázok</button><button disabled>Druhá kategória · doplníme neskôr</button></nav>
+<div id="storage-warning" class="notice warning" role="alert" hidden></div>
+<section id="home-screen">
+<div class="intro"><div><h1 class="intro-title">Vyber si tému alebo otvor otázky, ktoré si si uložila medzi problémové.</h1></div><button id="global-problems">★ Problémové (<span id="saved-count">0</span>)</button></div>
+<div id="resume-panel" class="resume" hidden><span id="resume-label"></span><button id="resume">Pokračovať →</button></div>
+<section class="settings" aria-label="Nastavenie precvičovania">
+<label>Režim<select id="mode"><option value="learn">Učenie – vyhodnotenie po otázke</option><option value="test">Test – vyhodnotenie na konci</option></select></label>
+<label>Počet otázok<select id="amount"><option value="all">Všetky v téme</option><option value="10">10 otázok</option><option value="20">20 otázok</option><option value="30">30 otázok</option></select></label>
+<label id="time-setting" hidden>Časový limit<select id="minutes"><option value="0">Bez limitu</option><option value="10">10 minút</option><option value="20">20 minút</option><option value="30">30 minút</option><option value="60">60 minút</option></select></label>
+<label class="check-setting"><input id="shuffle" type="checkbox"> Náhodné poradie otázok</label>
+<label class="check-setting"><input id="shuffle-options" type="checkbox"> Náhodné poradie možností</label>
+</section>
+<div class="all-row"><button id="start-all" class="primary">Precvičiť všetkých 281 otázok →</button></div>
+<div id="category-grid" class="category-grid"></div>
+<p class="footnote">Odpovede sa vyhodnocujú podľa tvojho dodaného súboru. Problémové otázky a rozpracované precvičovanie sa ukladajú v tomto prehliadači.</p>
+</section>
+<section id="quiz-screen" hidden>
+<div class="toolbar"><button id="back">← Témy</button><div><span id="session-kind"></span><span id="topic" class="topic"></span></div><span id="timer" class="timer" aria-live="off"></span></div>
+<div class="layout"><aside><div id="question-number" class="question-no"></div><p id="question-status"></p><p>Max. hodnotenie <strong id="question-max"></strong></p></aside>
+<section class="paper"><div class="question-progress"><label id="progress-label" for="question-progress">Otázka 1 z 1</label><progress id="question-progress" max="1" value="1" aria-labelledby="progress-label"></progress></div><h2 id="question"></h2><div id="incomplete" class="notice warning" hidden>Táto otázka nemá v zdrojovom súbore žiadne možnosti. Je zachovaná, ale nezapočítava sa do skóre.</div><table id="answer-table"><caption class="sr-only">Pri každom tvrdení vyber Správne alebo Nesprávne.</caption><thead><tr><th class="choice" scope="col">Správne</th><th class="choice" scope="col">Nesprávne</th><th class="statement-head" scope="col">Tvrdenie</th></tr></thead><tbody id="statements"></tbody></table><div class="question-actions"><button id="evaluate" class="primary">Vyhodnotiť</button><button id="bookmark" aria-pressed="false">☆ Uložiť medzi problémové</button></div><div id="feedback" role="status" aria-live="polite"></div><p id="source-comment" class="footnote" hidden></p></section></div>
+<footer class="quiz-nav"><button id="previous" class="primary">← Predchádzajúca otázka</button><span id="counter"></span><button id="next" class="primary">Ďalšia otázka →</button></footer>
+<div class="session-footer"><span id="answered-count"></span><button id="finish">Ukončiť a zobraziť výsledky</button><button id="return-results" hidden>Späť na výsledky</button></div>
+</section>
+<section id="results-screen" hidden><div class="toolbar"><button id="results-home">← Témy</button><span id="results-mode"></span></div><h1>Výsledok precvičovania</h1><p id="result-topic"></p><div class="score-panel"><strong id="score"></strong><span id="score-details"></span></div><p id="result-extra"></p><div class="results-actions"><button id="review" class="primary">Pozrieť odpovede</button><button id="retry">Precvičiť znova</button><button id="result-problems">★ Precvičiť problémové z tejto zostavy</button></div><div id="result-categories"></div></section>
+<dialog id="confirm-dialog"><h2 id="dialog-title"></h2><p id="dialog-text"></p><div class="dialog-actions"><button id="dialog-cancel">Pokračovať v odpovedaní</button><button id="dialog-confirm" class="primary">Odovzdať</button></div></dialog>
+<dialog id="message-dialog"><h2>Problémové otázky</h2><p id="message-text"></p><button id="message-close" class="primary">Rozumiem</button></dialog>
+</main><script id="quiz-data" type="application/json">{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Zraková ostrosť a optika oka"
+    },
+    {
+      "id": 2,
+      "name": "Doppler, pulzoximetria, krvný tlak a krvný obeh"
+    },
+    {
+      "id": 3,
+      "name": "Zobrazovacie metódy, ultrazvuk a akustika"
+    },
+    {
+      "id": 4,
+      "name": "Dozimetria, rádioaktivita a radiačná ochrana"
+    },
+    {
+      "id": 5,
+      "name": "Bioelektrické javy a analýza biosignálov – EKG, EEG, ERG, EGG"
+    },
+    {
+      "id": 6,
+      "name": "Spektrofotometria – meranie koncentrácie"
+    },
+    {
+      "id": 7,
+      "name": "Mechanika, viskozimetria a stalagmometria"
+    },
+    {
+      "id": 8,
+      "name": "Antropometria, energetika, termometria a mikroklíma"
+    },
+    {
+      "id": 9,
+      "name": "Optika, elektromagnetické žiarenie a fotometria"
+    },
+    {
+      "id": 10,
+      "name": "Štatistika, neistoty merania, fyzikálne veličiny a jednotky SI"
+    }
+  ],
+  "questions": [
+    {
+      "id": "M1-63",
+      "category": 1,
+      "question": "Obraz pozorovaného predmetu vytvorený zdravým ľudským okom na sietnici je:",
+      "statements": [
+        {
+          "text": "Skutočný",
+          "correct": true
+        },
+        {
+          "text": "Zmenšený",
+          "correct": true
+        },
+        {
+          "text": "Neskutočný",
+          "correct": false
+        },
+        {
+          "text": "Priamy",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-65",
+      "category": 1,
+      "question": "Očná šošovka je:",
+      "statements": [
+        {
+          "text": "Ploskodutá/planokonkávna rozptylka",
+          "correct": false
+        },
+        {
+          "text": "Dvojvypuklá/bikonvexná rozptylka",
+          "correct": false
+        },
+        {
+          "text": "Ploskovypuklá/planokonvexná spojka",
+          "correct": false
+        },
+        {
+          "text": "Dvojvypuklá/bikonvexná spojka",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-90",
+      "category": 1,
+      "question": "Fyzikálnou jednotkou zrakovej ostrosti je:",
+      "statements": [
+        {
+          "text": "Lux",
+          "correct": false
+        },
+        {
+          "text": "Lumen",
+          "correct": false
+        },
+        {
+          "text": "Dioptria",
+          "correct": false
+        },
+        {
+          "text": "m⁻¹",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-94",
+      "category": 1,
+      "question": "Rozlišovacia medza ľudského oka sa vyjadruje:",
+      "statements": [
+        {
+          "text": "Výškou pozorovaného predmetu",
+          "correct": false
+        },
+        {
+          "text": "Zorným uhlom",
+          "correct": true
+        },
+        {
+          "text": "Hrúbkou pozorovaného predmetu",
+          "correct": false
+        },
+        {
+          "text": "Vzdialenosťou pozorovaného predmetu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-168",
+      "category": 1,
+      "question": "Krátkozraké oko vytvára obraz pozorovaného predmetu:",
+      "statements": [
+        {
+          "text": "Pred sietnicou",
+          "correct": true
+        },
+        {
+          "text": "Na sietnici",
+          "correct": false
+        },
+        {
+          "text": "Za sietnicou",
+          "correct": false
+        },
+        {
+          "text": "Pred rohovkou",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-169",
+      "category": 1,
+      "question": "Posledný riadok, ktorý pacient prečítal bezchybne zo vzdialenosti 5 m, mal náležitú vzdialenosť 10 m. Zraková ostrosť pacienta je:",
+      "statements": [
+        {
+          "text": "5/10",
+          "correct": true
+        },
+        {
+          "text": "10/5",
+          "correct": false
+        },
+        {
+          "text": "0,5",
+          "correct": true
+        },
+        {
+          "text": "2",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-170",
+      "category": 1,
+      "question": "Posledný riadok, ktorý pacient prečítal bezchybne zo vzdialenosti 6 m, mal náležitú vzdialenosť 6 m. Zraková ostrosť pacienta je:",
+      "statements": [
+        {
+          "text": "6/6",
+          "correct": true
+        },
+        {
+          "text": "1/6",
+          "correct": false
+        },
+        {
+          "text": "1",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-171",
+      "category": 1,
+      "question": "Posledný riadok, ktorý pacient bezchybne prečítal z vyšetrovacej vzdialenosti 6 m na tabuli Snellenových optotypov, mal náležitú vzdialenosť 4 m. Zraková ostrosť pacienta je:",
+      "statements": [
+        {
+          "text": "6/4",
+          "correct": true
+        },
+        {
+          "text": "4/6",
+          "correct": false
+        },
+        {
+          "text": "0,5",
+          "correct": false
+        },
+        {
+          "text": "1,5",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-172",
+      "category": 1,
+      "question": "Zraková ostrosť 6/4 určená Snellenovými optotypmi znamená, že:",
+      "statements": [
+        {
+          "text": "Pacient čítal znaky zo vzdialenosti 6 m",
+          "correct": true
+        },
+        {
+          "text": "Pacient čítal znaky zo vzdialenosti 4 m",
+          "correct": false
+        },
+        {
+          "text": "Pacient má zrakovú ostrosť horšiu ako normálnu",
+          "correct": false
+        },
+        {
+          "text": "Pacient má zrakovú ostrosť lepšiu ako normálnu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-173",
+      "category": 1,
+      "question": "Zraková ostrosť 5/20 určená Snellenovými optotypmi znamená, že:",
+      "statements": [
+        {
+          "text": "Pacient čítal znaky zo vzdialenosti 5 m",
+          "correct": true
+        },
+        {
+          "text": "Pacient čítal znaky zo vzdialenosti 20 m",
+          "correct": false
+        },
+        {
+          "text": "Pacient má zrakovú ostrosť horšiu ako normálnu",
+          "correct": true
+        },
+        {
+          "text": "Pacient má zrakovú ostrosť lepšiu ako normálnu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-174",
+      "category": 1,
+      "question": "Šošovka v zdravom ľudskom oku je:",
+      "statements": [
+        {
+          "text": "Plankonvexná",
+          "correct": false
+        },
+        {
+          "text": "Bikonvexná",
+          "correct": true
+        },
+        {
+          "text": "Bikonkávna",
+          "correct": false
+        },
+        {
+          "text": "Plankonkávna",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-175",
+      "category": 1,
+      "question": "Na korekciu ďalekozrakosti sa používajú šošovky:",
+      "statements": [
+        {
+          "text": "Spojné",
+          "correct": true
+        },
+        {
+          "text": "Rozptylné",
+          "correct": false
+        },
+        {
+          "text": "Bikonkávne",
+          "correct": false
+        },
+        {
+          "text": "Plankonkávne",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-176",
+      "category": 1,
+      "question": "Pre emetropické oko je ďaleký bod vo vzdialenosti:",
+      "statements": [
+        {
+          "text": "1 meter",
+          "correct": false
+        },
+        {
+          "text": "10 metrov",
+          "correct": false
+        },
+        {
+          "text": "25 centimetrov",
+          "correct": false
+        },
+        {
+          "text": "Nekonečnej",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-177",
+      "category": 1,
+      "question": "V zdravom ľudskom oku sa obraz pozorovaného predmetu vytvára na:",
+      "statements": [
+        {
+          "text": "Dúhovke",
+          "correct": false
+        },
+        {
+          "text": "Cievovke",
+          "correct": false
+        },
+        {
+          "text": "Sietnici",
+          "correct": true
+        },
+        {
+          "text": "Šošovke",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-200",
+      "category": 1,
+      "question": "Obraz pozorovaného predmetu vytvorený zdravým ľudským okom na sietnici je:",
+      "statements": [
+        {
+          "text": "Prevrátený",
+          "correct": true
+        },
+        {
+          "text": "Zmenšený",
+          "correct": true
+        },
+        {
+          "text": "Zväčšený",
+          "correct": false
+        },
+        {
+          "text": "Neskutočný",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-238",
+      "category": 1,
+      "question": "Pacient pozoruje na tabuli Snellenových optotypov zo vzdialenosti 6 m celý znak s náležitou vzdialenosťou 4 m pod zorným uhlom:",
+      "statements": [
+        {
+          "text": "Menej ako 1 uhlový stupeň",
+          "correct": true
+        },
+        {
+          "text": "5 uhlových minút",
+          "correct": false
+        },
+        {
+          "text": "Viac ako 5 uhlových minút",
+          "correct": false
+        },
+        {
+          "text": "Menej ako 5 uhlových minút",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-239",
+      "category": 1,
+      "question": "Pacient pozoruje na tabuli Snellenových optotypov zo vzdialenosti 6 metrov celý znak s náležitou vzdialenosťou 6 metrov pod zorným uhlom:",
+      "statements": [
+        {
+          "text": "Menej ako 1 uhlový stupeň",
+          "correct": true
+        },
+        {
+          "text": "5 uhlových minút",
+          "correct": true
+        },
+        {
+          "text": "5 stupňov",
+          "correct": false
+        },
+        {
+          "text": "1 uhlovej minúty",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-251",
+      "category": 1,
+      "question": "Ľudské oko obsahuje optické médiá:",
+      "statements": [
+        {
+          "text": "Rohovka, sklovec, šošovka, sietnica",
+          "correct": false
+        },
+        {
+          "text": "Rohovka, komorová voda, dúhovka, sklovec",
+          "correct": false
+        },
+        {
+          "text": "Rohovka, komorová voda, šošovka, sklovec",
+          "correct": true
+        },
+        {
+          "text": "Rohovka, šošovka, sklovec, sietnica",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-2",
+      "category": 2,
+      "question": "Pri Dopplerovom jave je pozorovateľom detegovaná frekvencia zvuku vyššia ako frekvencia vysielaná zdrojom, ak sa:",
+      "statements": [
+        {
+          "text": "Zdroj zvuku pohybuje smerom od stojaceho pozorovateľa",
+          "correct": false
+        },
+        {
+          "text": "Zdroj zvuku a pozorovateľ pohybujú smerom od seba",
+          "correct": false
+        },
+        {
+          "text": "Zdroj zvuku pohybuje smerom k stojacemu pozorovateľovi",
+          "correct": true
+        },
+        {
+          "text": "Pozorovateľ pohybuje smerom od stojaceho zdroja zvuku",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-18",
+      "category": 2,
+      "question": "Pri meraní tlaku krvi oscilometrickou metódou majú oscilácie tlaku v manžete najväčšiu amplitúdu pri hodnote:",
+      "statements": [
+        {
+          "text": "Systolického tlaku",
+          "correct": false
+        },
+        {
+          "text": "Stredného arteriálneho tlaku",
+          "correct": true
+        },
+        {
+          "text": "Pulzného tlaku",
+          "correct": false
+        },
+        {
+          "text": "Diastolického tlaku",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-21",
+      "category": 2,
+      "question": "Pacientovi bol auskultačnou metódou nameraný arteriálny tlak krvi 136/88 mmHg. Platí:",
+      "statements": [
+        {
+          "text": "Z uvedených hodnôt nie je možné vypočítať hodnotu stredného arteriálneho tlaku",
+          "correct": false
+        },
+        {
+          "text": "Pulzný tlak pacienta je 104 mmHg",
+          "correct": false
+        },
+        {
+          "text": "Stredný arteriálny tlak pacienta je 104 mmHg",
+          "correct": true
+        },
+        {
+          "text": "Pulzný tlak pacienta je 112 mmHg",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-22",
+      "category": 2,
+      "question": "Fyzikálny princíp pulzného oximetra je založený na:",
+      "statements": [
+        {
+          "text": "Rovnici kontinuity",
+          "correct": false
+        },
+        {
+          "text": "Lambertovom-Beerovom zákone",
+          "correct": true
+        },
+        {
+          "text": "Hagen-Poiseuillovom zákone",
+          "correct": false
+        },
+        {
+          "text": "Dopplerovom jave",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-35",
+      "category": 2,
+      "question": "Korotkovove fenomény:",
+      "statements": [
+        {
+          "text": "Sú zvuky spôsobené turbulentným prúdením krvi v srdci",
+          "correct": false
+        },
+        {
+          "text": "Sú počuteľné len vtedy, ak je prúdenie krvi v cieve laminárne",
+          "correct": false
+        },
+        {
+          "text": "Sú zvuky spôsobené zatváraním srdcových chlopní",
+          "correct": false
+        },
+        {
+          "text": "Sú zvuky spôsobené turbulentným prúdením krvi v čiastočne stlačenej artérii",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-39",
+      "category": 2,
+      "question": "Počas praktického cvičenia „Meranie rýchlosti toku krvi“ sme merali rýchlosť toku krvi v:",
+      "statements": [
+        {
+          "text": "Artérii radialis",
+          "correct": true
+        },
+        {
+          "text": "Artérii brachialis",
+          "correct": false
+        },
+        {
+          "text": "Artérii ulnaris",
+          "correct": false
+        },
+        {
+          "text": "Artérii femoralis",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-51",
+      "category": 2,
+      "question": "Krv preteká cievou s polomerom 10 mm stálou rýchlosťou 0,4 m · s⁻¹. Ak zväčšíme polomer cievy na 20 mm, rýchlosť prúdenia bude:",
+      "statements": [
+        {
+          "text": "1,6 m · s⁻¹",
+          "correct": false
+        },
+        {
+          "text": "0,2 m · s⁻¹",
+          "correct": false
+        },
+        {
+          "text": "0,1 m · s⁻¹",
+          "correct": true
+        },
+        {
+          "text": "0,8 m · s⁻¹",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-67",
+      "category": 2,
+      "question": "Keď komory kontrahujú:",
+      "statements": [
+        {
+          "text": "Krv prúdi z pravej komory do pľúc",
+          "correct": true
+        },
+        {
+          "text": "Krv prúdi z ľavej komory do aorty",
+          "correct": true
+        },
+        {
+          "text": "Krv prúdi z predsiení do komôr",
+          "correct": false
+        },
+        {
+          "text": "Krv prúdi z komôr do predsiení",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-100",
+      "category": 2,
+      "question": "Hodnota, ktorú nameriame pri meraní krvného tlaku:",
+      "statements": [
+        {
+          "text": "Je rovná rozdielu hodnôt tlaku krvi v sledovanej artérii a atmosférického tlaku",
+          "correct": true
+        },
+        {
+          "text": "Predstavuje pretlak voči atmosférickému tlaku",
+          "correct": true
+        },
+        {
+          "text": "Je rovná rozdielu hodnôt tlaku krvi v sledovanej artérii a v sledovanej véne",
+          "correct": false
+        },
+        {
+          "text": "Je rovná rozdielu hodnôt tlaku krvi v srdci a v sledovanej artérii",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-260",
+      "category": 2,
+      "question": "Pulzoximeter meria:",
+      "statements": [
+        {
+          "text": "Saturáciu hemoglobínu kyslíkom v arteriálnej krvi",
+          "correct": true
+        },
+        {
+          "text": "Srdcovú frekvenciu",
+          "correct": true
+        },
+        {
+          "text": "Pulz",
+          "correct": true
+        },
+        {
+          "text": "Dychovú frekvenciu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-261",
+      "category": 2,
+      "question": "Krv z pravej komory ide do:",
+      "statements": [
+        {
+          "text": "Pľúc",
+          "correct": true
+        },
+        {
+          "text": "Pravej predsiene",
+          "correct": false
+        },
+        {
+          "text": "Ľavej komory",
+          "correct": false
+        },
+        {
+          "text": "Ľavej predsiene",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-262",
+      "category": 2,
+      "question": "Aklimatizácia na vysoké nadmorské výšky sa uskutočňuje v:",
+      "statements": [
+        {
+          "text": "Hypobarickej komore",
+          "correct": true
+        },
+        {
+          "text": "Hypotonickej komore",
+          "correct": false
+        },
+        {
+          "text": "Hyperbarickej komore",
+          "correct": false
+        },
+        {
+          "text": "Hypertonickej komore",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-266",
+      "category": 2,
+      "question": "Pri kontrakcii komôr:",
+      "statements": [
+        {
+          "text": "Krv prúdi z ľavej komory do aorty",
+          "correct": true
+        },
+        {
+          "text": "Krv prúdi z pravej komory do pľúc",
+          "correct": true
+        },
+        {
+          "text": "Krv prúdi z komôr do predsiení",
+          "correct": false
+        },
+        {
+          "text": "Krv prúdi z predsiení do komôr",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-273",
+      "category": 2,
+      "question": "Krv s vysokým obsahom O₂ dostanú pľúca od:",
+      "statements": [
+        {
+          "text": "Ľavej komory",
+          "correct": true
+        },
+        {
+          "text": "Pravej predsiene",
+          "correct": false
+        },
+        {
+          "text": "Ľavej predsiene",
+          "correct": false
+        },
+        {
+          "text": "Pravej komory",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-17",
+      "category": 2,
+      "question": "Pri Dopplerovom jave je detektorom prijatá frekvencia ultrazvuku nižšia ako frekvencia vysielaná zdrojom, ak sa:",
+      "statements": [
+        {
+          "text": "Detektor pohybuje k zdroju",
+          "correct": false
+        },
+        {
+          "text": "Zdroj a detektor pohybujú rovnakým smerom a rýchlosťou",
+          "correct": false
+        },
+        {
+          "text": "Zdroj a detektor pohybujú od seba",
+          "correct": true
+        },
+        {
+          "text": "Zdroj pohybuje k detektoru",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-22",
+      "category": 2,
+      "question": "Z Dopplerovho javu vyplýva, že keď sa zdroj zvuku a poslucháč:",
+      "statements": [
+        {
+          "text": "Vzďaľujú od seba, poslucháč počuje zvuk s nižšou frekvenciou, ako keby obaja stáli",
+          "correct": true
+        },
+        {
+          "text": "Približujú k sebe, poslucháč počuje zvuk s nižšou frekvenciou, ako keby obaja stáli",
+          "correct": false
+        },
+        {
+          "text": "Približujú k sebe, poslucháč počuje zvuk s vyššou frekvenciou, ako keby obaja stáli",
+          "correct": true
+        },
+        {
+          "text": "Vzďaľujú od seba, poslucháč počuje zvuk s vyššou frekvenciou, ako keby obaja stáli",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-83",
+      "category": 2,
+      "question": "Pre turbulentné prúdenie je charakteristické, že:",
+      "statements": [
+        {
+          "text": "Je to prúdenie pri veľmi nízkej rýchlosti",
+          "correct": false
+        },
+        {
+          "text": "Tvar prúdenia sa mení od miesta k miestu",
+          "correct": true
+        },
+        {
+          "text": "Reynoldsovo číslo charakterizujúce toto prúdenie má hodnotu < 1000",
+          "correct": false
+        },
+        {
+          "text": "Tvar prúdenia je v celej trubici rovnaký",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-88",
+      "category": 2,
+      "question": "Pod pojmom objemový tok (objemový prietok, prietokový objem) rozumieme:",
+      "statements": [
+        {
+          "text": "Jednotkový objem kvapaliny pretekajúci jednotkovým prierezom trubice",
+          "correct": false
+        },
+        {
+          "text": "Objem kvapaliny pretekajúci jednotkovým prierezom trubice za jednotku času",
+          "correct": false
+        },
+        {
+          "text": "Jednotkový objem kvapaliny pretekajúci prierezom trubice za jednotku času",
+          "correct": false
+        },
+        {
+          "text": "Objem kvapaliny pretekajúci prierezom trubice za jednotku času",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-4",
+      "category": 3,
+      "question": "Na ultrazvukové vyšetrenie bola použitá sonda s frekvenciou 4 MHz. Ak sa ultrazvuk vo vyšetrovanom tkanive šíri rýchlosťou 1 600 m/s, potom je jeho vlnová dĺžka:",
+      "statements": [
+        {
+          "text": "64 μm",
+          "correct": false
+        },
+        {
+          "text": "4 · 10⁻⁴ m",
+          "correct": true
+        },
+        {
+          "text": "400 mm",
+          "correct": false
+        },
+        {
+          "text": "400 μm",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-19",
+      "category": 3,
+      "question": "Na praktickom cvičení z ultrazvukového zobrazovania bol použitý mód zobrazenia:",
+      "statements": [
+        {
+          "text": "B",
+          "correct": true
+        },
+        {
+          "text": "A",
+          "correct": false
+        },
+        {
+          "text": "M",
+          "correct": false
+        },
+        {
+          "text": "C",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-36",
+      "category": 3,
+      "question": "V medicíne sa na diagnostické účely môže použiť ultrazvuk s frekvenciou:",
+      "statements": [
+        {
+          "text": "6 kHz",
+          "correct": false
+        },
+        {
+          "text": "6 MHz",
+          "correct": true
+        },
+        {
+          "text": "6 Hz",
+          "correct": false
+        },
+        {
+          "text": "6 GHz",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-50",
+      "category": 3,
+      "question": "Dvojrozmerné ultrazvukové zobrazenie je:",
+      "statements": [
+        {
+          "text": "TM (M) mód",
+          "correct": false
+        },
+        {
+          "text": "D mód",
+          "correct": false
+        },
+        {
+          "text": "B mód",
+          "correct": true
+        },
+        {
+          "text": "A mód",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-64",
+      "category": 3,
+      "question": "Ultrazvuk:",
+      "statements": [
+        {
+          "text": "Sa nemôže šíriť vo vákuu",
+          "correct": true
+        },
+        {
+          "text": "Je elektromagnetické vlnenie",
+          "correct": false
+        },
+        {
+          "text": "Sa môže šíriť iba v plynoch a kvapalinách",
+          "correct": false
+        },
+        {
+          "text": "Sa v hmotnom prostredí môže šíriť ako pozdĺžne alebo priečne vlnenie",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-75",
+      "category": 3,
+      "question": "Kontrastné látky využívame na:",
+      "statements": [
+        {
+          "text": "Skrátenie času merania",
+          "correct": false
+        },
+        {
+          "text": "Zníženie absorpcie",
+          "correct": true
+        },
+        {
+          "text": "Vyšetrenie priebehu a tvaru tepien",
+          "correct": true
+        },
+        {
+          "text": "Zvýšenie absorpcie",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-86",
+      "category": 3,
+      "question": "Ultrazvuk sa v hmotnom prostredí šíri rýchlosťou:",
+      "statements": [
+        {
+          "text": "Väčšou ako rýchlosť zvuku v danom prostredí",
+          "correct": false
+        },
+        {
+          "text": "Rovnakou ako rýchlosť zvuku v danom prostredí",
+          "correct": true
+        },
+        {
+          "text": "Rovnakou ako rýchlosť infrazvuku v danom prostredí",
+          "correct": true
+        },
+        {
+          "text": "Menšou ako rýchlosť zvuku v danom prostredí",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-92",
+      "category": 3,
+      "question": "Transformácia zvukového vlnenia na elektrický impulz nastáva:",
+      "statements": [
+        {
+          "text": "Vo vnútornom uchu",
+          "correct": true
+        },
+        {
+          "text": "V zvukovom kanáli",
+          "correct": false
+        },
+        {
+          "text": "V ušnici",
+          "correct": false
+        },
+        {
+          "text": "V strednom uchu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-93",
+      "category": 3,
+      "question": "Frekvencia zvukovej vlny s periódou 1 ms je:",
+      "statements": [
+        {
+          "text": "1 000 Hz",
+          "correct": true
+        },
+        {
+          "text": "0,1 MHz",
+          "correct": false
+        },
+        {
+          "text": "1 MHz",
+          "correct": false
+        },
+        {
+          "text": "1 kHz",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-95",
+      "category": 3,
+      "question": "Zvuk je:",
+      "statements": [
+        {
+          "text": "Elektromagnetické žiarenie prenášajúce energiu",
+          "correct": false
+        },
+        {
+          "text": "Mechanické vlnenie s vlnovou dĺžkou",
+          "correct": true
+        },
+        {
+          "text": "Mechanické vlnenie prenášajúce energiu",
+          "correct": true
+        },
+        {
+          "text": "Mechanické vlnenie s frekvenciou",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-102",
+      "category": 3,
+      "question": "Angiografia využíva:",
+      "statements": [
+        {
+          "text": "α častice",
+          "correct": false
+        },
+        {
+          "text": "γ žiarenie",
+          "correct": false
+        },
+        {
+          "text": "RTG žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Ultrafialové žiarenie",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-250",
+      "category": 3,
+      "question": "Jednotka ultrazvukovej intenzity môže byť:",
+      "statements": [
+        {
+          "text": "Watt na meter štvorcový (W/m²)",
+          "correct": true
+        },
+        {
+          "text": "Decibel",
+          "correct": false
+        },
+        {
+          "text": "W · cm⁻²",
+          "correct": true
+        },
+        {
+          "text": "1 (bezrozmerné)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-252",
+      "category": 3,
+      "question": "Zvuk je:",
+      "statements": [
+        {
+          "text": "Mechanické vlnenie s vlnovou dĺžkou",
+          "correct": true
+        },
+        {
+          "text": "Mechanické vlnenie transmitujúce energiu",
+          "correct": true
+        },
+        {
+          "text": "Elektromagnetické žiarenie transmitujúce energiu",
+          "correct": false
+        },
+        {
+          "text": "Mechanické vlnenie s frekvenciou",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-264",
+      "category": 3,
+      "question": "Zvuk je mechanické vlnenie, ktoré:",
+      "statements": [
+        {
+          "text": "Sa prejavuje ako tlaková vlna",
+          "correct": true
+        },
+        {
+          "text": "Môže byť priečne alebo pozdĺžne",
+          "correct": true
+        },
+        {
+          "text": "Sa šíri iba v hmotnom prostredí",
+          "correct": true
+        },
+        {
+          "text": "Sa šíri najrýchlejšie vo voľnom priestore",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-265",
+      "category": 3,
+      "question": "Medicínske zobrazovacie metódy používajú:",
+      "statements": [
+        {
+          "text": "Elektromagnetické žiarenie s nízkymi frekvenciami",
+          "correct": false
+        },
+        {
+          "text": "Neionizujúce žiarenie",
+          "correct": false
+        },
+        {
+          "text": "Častice s vysokou energiou",
+          "correct": true
+        },
+        {
+          "text": "Ionizujúce žiarenie",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-268",
+      "category": 3,
+      "question": "MRI využíva:",
+      "statements": [
+        {
+          "text": "Magnetické pole",
+          "correct": true
+        },
+        {
+          "text": "γ žiarenie",
+          "correct": false
+        },
+        {
+          "text": "Viditeľné svetlo",
+          "correct": false
+        },
+        {
+          "text": "RTG",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-271",
+      "category": 3,
+      "question": "Dve zvukové vlny, ktoré sa krížia, môžu mať:",
+      "statements": [
+        {
+          "text": "Rovnaký zdroj",
+          "correct": false
+        },
+        {
+          "text": "Rovnaké frekvencie",
+          "correct": false
+        },
+        {
+          "text": "Navzájom opačné smery šírenia",
+          "correct": true
+        },
+        {
+          "text": "Rovnaké periódy",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-276",
+      "category": 3,
+      "question": "Počas … ultrazvukový mód:",
+      "statements": [
+        {
+          "text": "B",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-6",
+      "category": 4,
+      "question": "Negatívne beta žiarenie (β⁻):",
+      "statements": [
+        {
+          "text": "Je tvorené elektrónmi",
+          "correct": true
+        },
+        {
+          "text": "Môže byť absorbované hliníkovou vrstvou",
+          "correct": true
+        },
+        {
+          "text": "Je tvorené negatívnymi iónmi",
+          "correct": false
+        },
+        {
+          "text": "Je prenikavejšie ako alfa žiarenie",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-11",
+      "category": 4,
+      "question": "Rádioaktívne nuklidy sú jadrá, ktoré:",
+      "statements": [
+        {
+          "text": "Môžu emitovať elektróny",
+          "correct": true
+        },
+        {
+          "text": "Môžu emitovať fotóny",
+          "correct": true
+        },
+        {
+          "text": "Môžu emitovať pozitróny",
+          "correct": true
+        },
+        {
+          "text": "Sú stabilné",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-13",
+      "category": 4,
+      "question": "Beta gama dozimeter používaný na praktických cvičeniach má na zadnej stene hliníkový kryt. Ak ho ponecháme na dozimetri, môžeme detegovať:",
+      "statements": [
+        {
+          "text": "Gama častice",
+          "correct": true
+        },
+        {
+          "text": "Príkon ekvivalentnej dávky",
+          "correct": true
+        },
+        {
+          "text": "Beta častice spolu s gama časticami",
+          "correct": false
+        },
+        {
+          "text": "Expozičný príkon",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-14",
+      "category": 4,
+      "question": "Nepriamo ionizujúce žiarenie:",
+      "statements": [
+        {
+          "text": "Sú napríklad fotóny elektromagnetického žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Sú elektricky nabité častice",
+          "correct": false
+        },
+        {
+          "text": "Môže byť neutrón",
+          "correct": true
+        },
+        {
+          "text": "Môže byť pozitrón",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-17",
+      "category": 4,
+      "question": "Efektívna dávka E v dozimetrii ionizujúceho žiarenia:",
+      "statements": [
+        {
+          "text": "Má fyzikálnu jednotku gray",
+          "correct": false
+        },
+        {
+          "text": "Sa pre celé telo počíta ako súčet čiastkových efektívnych dávok pre jednotlivé orgány",
+          "correct": true
+        },
+        {
+          "text": "Je stredná absorbovaná dávka v tkanive alebo orgáne vynásobená príslušným tkanivovým váhovým faktorom wₜ",
+          "correct": false
+        },
+        {
+          "text": "Je ekvivalentná dávka v tkanive alebo orgáne vynásobená príslušným tkanivovým váhovým faktorom wₜ",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-24",
+      "category": 4,
+      "question": "Expozícia X v dozimetrii ionizujúceho žiarenia je definovaná:",
+      "statements": [
+        {
+          "text": "Prostredníctvom elektrického náboja vytvoreného vo vzduchu",
+          "correct": true
+        },
+        {
+          "text": "Pre röntgenové žiarenie a gama žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Pre nepriamo ionizujúce fotónové žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Ako pomer energie žiarenia absorbovanej v objemovom elemente látky a hmotnosti tohto elementu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-27",
+      "category": 4,
+      "question": "Zariadenie určené na meranie dávky ionizujúceho žiarenia je:",
+      "statements": [
+        {
+          "text": "Goniometer",
+          "correct": false
+        },
+        {
+          "text": "Detektor",
+          "correct": false
+        },
+        {
+          "text": "Dozimeter",
+          "correct": true
+        },
+        {
+          "text": "Spektrofotometer",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-29",
+      "category": 4,
+      "question": "Pre aktivitu rádioaktívnej látky platí:",
+      "statements": [
+        {
+          "text": "Klesá rovnako rýchlo ako počet nepremenených jadier",
+          "correct": true
+        },
+        {
+          "text": "Vypočíta sa ako súčin počtu premenených jadier a konštanty premeny",
+          "correct": false
+        },
+        {
+          "text": "Je to rýchlosť rádioaktívnej premeny",
+          "correct": true
+        },
+        {
+          "text": "Vypočíta sa ako podiel počtu premenených jadier a konštanty premeny",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-37",
+      "category": 4,
+      "question": "Žiarenie gama (γ):",
+      "statements": [
+        {
+          "text": "Je prenikavejšie ako alfa žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Je tvorené fotónmi",
+          "correct": true
+        },
+        {
+          "text": "Je elektromagnetické žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Je priťahované k záporne nabitej elektróde detektora s plynovou náplňou",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-43",
+      "category": 4,
+      "question": "Na obrázku je výrez predného panela beta gama dozimetra používaného na praktických cvičeniach. Symbol „Ẋ“ reprezentuje:",
+      "statements": [
+        {
+          "text": "Príkon ekvivalentnej dávky",
+          "correct": false
+        },
+        {
+          "text": "Absorbovanú dávku",
+          "correct": false
+        },
+        {
+          "text": "Expozičný príkon",
+          "correct": true
+        },
+        {
+          "text": "Expozíciu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-46",
+      "category": 4,
+      "question": "Expozičná rýchlosť v dozimetrii ionizujúceho žiarenia:",
+      "statements": [
+        {
+          "text": "Je definovaná ako Ẋ = dE/dt (E je energia, t je čas)",
+          "correct": false
+        },
+        {
+          "text": "Je stredný prírastok expozície v určitom časovom intervale",
+          "correct": true
+        },
+        {
+          "text": "Má fyzikálnu jednotku A/kg",
+          "correct": true
+        },
+        {
+          "text": "Je definovaná ako Ẋ = dX/dt (X je expozícia, t je čas)",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-47",
+      "category": 4,
+      "question": "Absorbovaná dávka D v dozimetrii ionizujúceho žiarenia je definovaná ako:",
+      "statements": [
+        {
+          "text": "D = dĒ/dm (Ē je stredná energia, m je hmotnosť)",
+          "correct": true
+        },
+        {
+          "text": "Pomer energie žiarenia dopadnutej na objemový element látky a jeho hmotnosti",
+          "correct": false
+        },
+        {
+          "text": "Pomer strednej energie ionizujúceho žiarenia absorbovanej objemovým elementom látky a jeho hmotnosti",
+          "correct": true
+        },
+        {
+          "text": "D = dm/dĒ (Ē je stredná energia, m je hmotnosť)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-68",
+      "category": 4,
+      "question": "Účinným spôsobom ochrany pred röntgenovým žiarením je:",
+      "statements": [
+        {
+          "text": "Použitie oloveného tienenia",
+          "correct": true
+        },
+        {
+          "text": "Použitie ochranných gumených rukavíc",
+          "correct": false
+        },
+        {
+          "text": "Zvýšenie príjmu tekutín",
+          "correct": false
+        },
+        {
+          "text": "Použitie slnečných okuliarov s UV-C filtrom",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-70",
+      "category": 4,
+      "question": "Pri elektrónovom záchyte vznikne jadro nového prvku, ktoré má:",
+      "statements": [
+        {
+          "text": "Protónové číslo menšie o 1",
+          "correct": true
+        },
+        {
+          "text": "Neutrónové číslo väčšie o 1",
+          "correct": true
+        },
+        {
+          "text": "Protónové číslo väčšie o 1",
+          "correct": false
+        },
+        {
+          "text": "Nukleónové číslo väčšie o 1",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-80",
+      "category": 4,
+      "question": "Pre dobu polpremeny T₁/₂ a konštantu rádioaktívnej premeny λ platí:",
+      "statements": [
+        {
+          "text": "T₁/₂ · λ = 2",
+          "correct": false
+        },
+        {
+          "text": "T₁/₂ = λ · ln 2",
+          "correct": false
+        },
+        {
+          "text": "T₁/₂ · λ = ln 2",
+          "correct": true
+        },
+        {
+          "text": "T₁/₂ = (ln 2)/λ",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-81",
+      "category": 4,
+      "question": "Lineárny koeficient zoslabenia:",
+      "statements": [
+        {
+          "text": "Je tým väčší, čím väčšia je hustota materiálu",
+          "correct": true
+        },
+        {
+          "text": "Je tým menší, čím väčšie je hmotnostné číslo materiálu",
+          "correct": true
+        },
+        {
+          "text": "Je tým menší, čím menšia je energia žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Je tým väčší, čím väčšie je protónové číslo materiálu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-84",
+      "category": 4,
+      "question": "Teleso s hmotnosťou 10 kg absorbovalo dávku 10 Gy. Množstvo absorbovanej energie je:",
+      "statements": [
+        {
+          "text": "1 J",
+          "correct": false
+        },
+        {
+          "text": "100 J",
+          "correct": true
+        },
+        {
+          "text": "100 Sv",
+          "correct": false
+        },
+        {
+          "text": "0,1 kJ",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-96",
+      "category": 4,
+      "question": "Comptonov jav:",
+      "statements": [
+        {
+          "text": "Dokazuje vlnový charakter svetla",
+          "correct": false
+        },
+        {
+          "text": "Je iný názov rozptylu elektromagnetického žiarenia na elektrónoch",
+          "correct": true
+        },
+        {
+          "text": "Je typická interakcia častíc beta s prostredím",
+          "correct": false
+        },
+        {
+          "text": "Je typická interakcia röntgenového žiarenia pri prechode prostredím",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-103",
+      "category": 4,
+      "question": "Vzorka rádioaktívneho uhlíka ¹⁴C má aktivitu 2,8 × 10⁷ Bq. Doba polpremeny ¹⁴C je 5 730 rokov. Aktivita vzorky po uplynutí 11 460 rokov bude:",
+      "statements": [
+        {
+          "text": "14 MBq",
+          "correct": false
+        },
+        {
+          "text": "7 MBq",
+          "correct": true
+        },
+        {
+          "text": "7 000 kBq",
+          "correct": true
+        },
+        {
+          "text": "14 000 kBq",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-244",
+      "category": 4,
+      "question": "Čo označuje na dozimetri symbol φ?",
+      "statements": [
+        {
+          "text": "Príkon ekvivalentnej dávky",
+          "correct": false
+        },
+        {
+          "text": "Fluencia častíc",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-247",
+      "category": 4,
+      "question": "Pre biologickú λᵦᵢₒₗ, efektívnu λₑ𝒻 a fyzikálnu λ₁/₂ konštantu rozpadu platí:",
+      "statements": [
+        {
+          "text": "λₑ𝒻 = λ₁/₂ + λᵦᵢₒₗ",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-267",
+      "category": 4,
+      "question": "α a β častice ionizujú médium:",
+      "statements": [
+        {
+          "text": "Priamo",
+          "correct": true
+        },
+        {
+          "text": "Najviac na konci ich cesty",
+          "correct": true
+        },
+        {
+          "text": "Najviac na začiatku ich cesty, keď majú najväčšiu rýchlosť",
+          "correct": false
+        },
+        {
+          "text": "Počas celej cesty s rovnakou špecifickou ionizáciou",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-280",
+      "category": 4,
+      "question": "Efektívna metóda ochrany proti RTG je:",
+      "statements": [
+        {
+          "text": "Olovený štít",
+          "correct": true
+        },
+        {
+          "text": "Gumené rukavice",
+          "correct": false
+        },
+        {
+          "text": "Zvýšený príjem tekutín",
+          "correct": false
+        },
+        {
+          "text": "Slnečné okuliare s UV-C filtrom",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-16",
+      "category": 4,
+      "question": "Dve osoby, A a B, rovnakej hmotnosti (mₐ = mᵦ) boli ožiarené počas rovnakého času (tₐ = tᵦ) rôznou absorbovanou dávkou (Dₐ > Dᵦ) korpuskulárneho žiarenia. Potom platí:",
+      "statements": [
+        {
+          "text": "Celotelová efektívna dávka bola pre osobu A vyššia ako pre osobu B",
+          "correct": true
+        },
+        {
+          "text": "Ekvivalentná dávka bola pre obe osoby rovnaká",
+          "correct": false
+        },
+        {
+          "text": "Dávkový príkon pre osobu A bol nižší ako pre osobu B",
+          "correct": false
+        },
+        {
+          "text": "Expozícia bola pre obe osoby rovnaká",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-18",
+      "category": 4,
+      "question": "Dve osoby, A a B, rovnakej hmotnosti (mₐ = mᵦ) boli ožiarené rovnakou absorbovanou dávkou (Dₐ = Dᵦ) röntgenového žiarenia, ale počas rôzneho času (tₐ > tᵦ). Potom platí:",
+      "statements": [
+        {
+          "text": "Dávkový príkon bol pre obe osoby rovnaký",
+          "correct": false
+        },
+        {
+          "text": "Dávkový príkon pre osobu A bol nižší ako pre osobu B",
+          "correct": true
+        },
+        {
+          "text": "Ekvivalentná dávka bola pre obe osoby rovnaká",
+          "correct": true
+        },
+        {
+          "text": "Celotelová efektívna dávka bola pre obe osoby rovnaká",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-25",
+      "category": 4,
+      "question": "Ekvivalentná dávka Hₜ v dozimetrii ionizujúceho žiarenia:",
+      "statements": [
+        {
+          "text": "Je stredná absorbovaná dávka v tkanive alebo orgáne vynásobená príslušným radiačným váhovým faktorom wᵣ",
+          "correct": true
+        },
+        {
+          "text": "Je pre menšiu hmotnosť absorbujúceho materiálu a pri rovnakej absorbovanej energii vyššia",
+          "correct": true
+        },
+        {
+          "text": "Berie do úvahy biologické účinky žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Má fyzikálnu jednotku sievert",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-77",
+      "category": 4,
+      "question": "Ochrana pred vonkajším žiarením je založená na troch princípoch:",
+      "statements": [
+        {
+          "text": "Typ žiarenia, typ dozimetra, čas",
+          "correct": false
+        },
+        {
+          "text": "Tienenie, vzdialenosť, typ",
+          "correct": false
+        },
+        {
+          "text": "Čas, tienenie, vzdialenosť",
+          "correct": true
+        },
+        {
+          "text": "Tienenie, vzdialenosť, čas",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-78",
+      "category": 4,
+      "question": "Ionizujúce žiarenie má:",
+      "statements": [
+        {
+          "text": "Nižšiu frekvenciu ako infračervené žiarenie",
+          "correct": false
+        },
+        {
+          "text": "Vyššiu frekvenciu ako viditeľné svetlo",
+          "correct": true
+        },
+        {
+          "text": "Kratšiu vlnovú dĺžku ako viditeľné svetlo",
+          "correct": true
+        },
+        {
+          "text": "Dlhšiu vlnovú dĺžku ako viditeľné svetlo",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-79",
+      "category": 4,
+      "question": "Pri terapii bol použitý uzavretý rádioaktívny izotop s aktivitou 20 kBq. Polčas premeny je 10 dní. Aká bude aktivita izotopu po 20 dňoch?",
+      "statements": [
+        {
+          "text": "2,5 kBq",
+          "correct": false
+        },
+        {
+          "text": "60 kBq",
+          "correct": false
+        },
+        {
+          "text": "30 kBq",
+          "correct": false
+        },
+        {
+          "text": "5 kBq",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-80",
+      "category": 4,
+      "question": "Vzťah medzi polčasom rádioaktívnej premeny T₁/₂ a konštantou premeny λ je:",
+      "statements": [
+        {
+          "text": "T₁/₂ · λ = ln 2",
+          "correct": true
+        },
+        {
+          "text": "T₁/₂ · λ = 2",
+          "correct": false
+        },
+        {
+          "text": "T₁/₂ = λ · ln 2",
+          "correct": false
+        },
+        {
+          "text": "T₁/₂ = λ · 2",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-81",
+      "category": 4,
+      "question": "Jednotkou aktivity je becquerel, čo znamená:",
+      "statements": [
+        {
+          "text": "3,7 · 10⁷ premien za 1 sekundu",
+          "correct": false
+        },
+        {
+          "text": "1 premena za 1 minútu",
+          "correct": false
+        },
+        {
+          "text": "1 premena za 1 sekundu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-3",
+      "category": 5,
+      "question": "Unipolárne elektrokardiografické zvody sú:",
+      "statements": [
+        {
+          "text": "I, II, III",
+          "correct": false
+        },
+        {
+          "text": "aVR, aVL, aVF",
+          "correct": true
+        },
+        {
+          "text": "1, 2, 3",
+          "correct": false
+        },
+        {
+          "text": "V₁, V₂, V₃, V₄, V₅, V₆",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-7",
+      "category": 5,
+      "question": "Podľa Ohmovho zákona:",
+      "statements": [
+        {
+          "text": "Elektrický prúd so znižujúcim sa elektrickým napätím rastie",
+          "correct": false
+        },
+        {
+          "text": "Elektrický prúd so znižujúcim sa elektrickým napätím klesá",
+          "correct": true
+        },
+        {
+          "text": "Elektrický prúd so zvyšujúcim sa elektrickým napätím rastie",
+          "correct": true
+        },
+        {
+          "text": "Elektrický prúd so zvyšujúcim sa elektrickým napätím klesá",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-9",
+      "category": 5,
+      "question": "Hrudníkové elektrokardiografické zvody sú:",
+      "statements": [
+        {
+          "text": "V₁, V₂, V₃, V₄, V₅, V₆",
+          "correct": true
+        },
+        {
+          "text": "1, 2, 3",
+          "correct": false
+        },
+        {
+          "text": "aVR, aVL, aVF",
+          "correct": false
+        },
+        {
+          "text": "I, II, III",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-16",
+      "category": 5,
+      "question": "Elektrickú os srdca počas komplexu QRS konštruujeme tak, že na strany Einthovenovho trojuholníka zakreslíme vektory, ktoré predstavujú:",
+      "statements": [
+        {
+          "text": "Absolútnu hodnotu súčtu amplitúd počas komplexu QRS v zodpovedajúcich zvodoch",
+          "correct": false
+        },
+        {
+          "text": "Výšku kmitov R v zodpovedajúcich zvodoch",
+          "correct": false
+        },
+        {
+          "text": "Súčet amplitúd počas komplexu QRS v zodpovedajúcich zvodoch",
+          "correct": true
+        },
+        {
+          "text": "Rozdiel kladných amplitúd počas komplexu QRS v zodpovedajúcich zvodoch",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-26",
+      "category": 5,
+      "question": "Kombináciu dvoch vodičov a ich elektród, ktoré tvoria s meracím zariadením uzavretý elektrický obvod, nazývame:",
+      "statements": [
+        {
+          "text": "Wilsonova svorka",
+          "correct": false
+        },
+        {
+          "text": "Elektrokardiograf",
+          "correct": false
+        },
+        {
+          "text": "Zvod",
+          "correct": true
+        },
+        {
+          "text": "Potenciálový rozdiel",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-31",
+      "category": 5,
+      "question": "Elektrokardiogram je:",
+      "statements": [
+        {
+          "text": "Grafický záznam elektrickej činnosti srdca",
+          "correct": true
+        },
+        {
+          "text": "Časová závislosť zmien elektrického napätia, ktoré sú dôsledkom akčných potenciálov buniek srdcovej svaloviny",
+          "correct": true
+        },
+        {
+          "text": "Metóda merania elektrickej činnosti srdca",
+          "correct": false
+        },
+        {
+          "text": "Kváziperiodická krivka",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-33",
+      "category": 5,
+      "question": "V elektrokardiografii predstavuje elektróda pripojená na ľavú nohu:",
+      "statements": [
+        {
+          "text": "Kladný pól zvodu I",
+          "correct": false
+        },
+        {
+          "text": "Neutrálnu (uzemňovaciu) elektródu",
+          "correct": false
+        },
+        {
+          "text": "Kladný pól zvodu III",
+          "correct": true
+        },
+        {
+          "text": "Kladný pól zvodu II",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-40",
+      "category": 5,
+      "question": "Elektrický odpor sa rovná:",
+      "statements": [
+        {
+          "text": "Prevrátenej hodnote elektrickej vodivosti",
+          "correct": true
+        },
+        {
+          "text": "Podielu elektrického napätia a elektrického prúdu",
+          "correct": true
+        },
+        {
+          "text": "Súčinu elektrického napätia a elektrického prúdu",
+          "correct": false
+        },
+        {
+          "text": "Súčinu rezistivity a dĺžky vodiča, deleného plochou prierezu vodiča",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-48",
+      "category": 5,
+      "question": "Pri amplitúdovej analýze elektrokardiografickej krivky je:",
+      "statements": [
+        {
+          "text": "Výška výchylky kladná hodnota",
+          "correct": true
+        },
+        {
+          "text": "Výška aj hĺbka výchylky kladná hodnota",
+          "correct": false
+        },
+        {
+          "text": "Hĺbka výchylky kladná hodnota",
+          "correct": false
+        },
+        {
+          "text": "Hĺbka výchylky záporná hodnota",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-52",
+      "category": 5,
+      "question": "Vnútorný elektrický odpor ľudského tela (krvný obeh, vnútorné orgány) je zvyčajne:",
+      "statements": [
+        {
+          "text": "Nižší ako vonkajší elektrický odpor (koža a svalstvo)",
+          "correct": true
+        },
+        {
+          "text": "Nižší ako 1 MΩ",
+          "correct": true
+        },
+        {
+          "text": "Vyšší ako vonkajší elektrický odpor (koža a svalstvo)",
+          "correct": false
+        },
+        {
+          "text": "Vyšší ako 1 MΩ",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-53",
+      "category": 5,
+      "question": "Pri kvalitatívnej analýze biosignálu:",
+      "statements": [
+        {
+          "text": "Sú výstupom analýzy biosignálu čísla",
+          "correct": false
+        },
+        {
+          "text": "Biosignál opisujeme slovne",
+          "correct": true
+        },
+        {
+          "text": "Biosignál posudzujeme vizuálne",
+          "correct": true
+        },
+        {
+          "text": "Meriame vybrané parametre biosignálu, napríklad jeho amplitúdu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-55",
+      "category": 5,
+      "question": "Elektrická vodivosť kovového vodiča je:",
+      "statements": [
+        {
+          "text": "Prevrátená hodnota elektrického odporu",
+          "correct": true
+        },
+        {
+          "text": "Podiel elektrického prúdu pretekajúceho vodičom a elektrického napätia na vodiči",
+          "correct": true
+        },
+        {
+          "text": "Pomer elektrického odporu a elektrického napätia na vodiči",
+          "correct": false
+        },
+        {
+          "text": "Súčin elektrického prúdu pretekajúceho vodičom a elektrického napätia na vodiči",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-59",
+      "category": 5,
+      "question": "Elektrický odpor R kovového vodiča sa pre určitý interval teplôt (t − t₀) mení:",
+      "statements": [
+        {
+          "text": "Kvadraticky",
+          "correct": false
+        },
+        {
+          "text": "Exponenciálne",
+          "correct": false
+        },
+        {
+          "text": "Lineárne",
+          "correct": true
+        },
+        {
+          "text": "Nezávisle od teploty",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-71",
+      "category": 5,
+      "question": "Elektrický prúd:",
+      "statements": [
+        {
+          "text": "Je organizovaný pohyb nenabitých častíc",
+          "correct": false
+        },
+        {
+          "text": "Sa meria v jednotkách A (ampér)",
+          "correct": true
+        },
+        {
+          "text": "Je prenos nabitých častíc jedným smerom",
+          "correct": true
+        },
+        {
+          "text": "Je daný veľkosťou náboja",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-72",
+      "category": 5,
+      "question": "Rýchlosť šírenia akčného potenciálu je väčšia v:",
+      "statements": [
+        {
+          "text": "Axónoch s menším priemerom",
+          "correct": false
+        },
+        {
+          "text": "Axónoch s väčším priemerom",
+          "correct": true
+        },
+        {
+          "text": "Myelinizovaných axónoch",
+          "correct": true
+        },
+        {
+          "text": "Nemyelinizovaných axónoch",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-76",
+      "category": 5,
+      "question": "Pre vlnu „a“ na elektroretinograme platí:",
+      "statements": [
+        {
+          "text": "Je obvykle najväčšou vlnou elektroretinogramu",
+          "correct": false
+        },
+        {
+          "text": "Je negatívna",
+          "correct": true
+        },
+        {
+          "text": "Reprezentuje hyperpolarizáciu čapíkov",
+          "correct": true
+        },
+        {
+          "text": "Objavuje sa približne 50 ms po svetelnom stimule",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-78",
+      "category": 5,
+      "question": "Spriemerovanie signálov je metóda, ktorá je nevyhnutná pri:",
+      "statements": [
+        {
+          "text": "Monitorovaní podľa Holtera",
+          "correct": false
+        },
+        {
+          "text": "Vysokorozlišovacej elektrokardiografii",
+          "correct": true
+        },
+        {
+          "text": "Multifokálnej elektroretinografii",
+          "correct": false
+        },
+        {
+          "text": "Elektrokardiografickom mapovaní",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-85",
+      "category": 5,
+      "question": "Vlastnosti receptorového potenciálu:",
+      "statements": [
+        {
+          "text": "Jeho veľkosť závisí priamo úmerne od veľkosti stimulu",
+          "correct": true
+        },
+        {
+          "text": "Zmenšovanie jeho amplitúdy ako prechádza cytoplazmou",
+          "correct": true
+        },
+        {
+          "text": "Je depolarizačný",
+          "correct": true
+        },
+        {
+          "text": "Je hyperpolarizačný",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-89",
+      "category": 5,
+      "question": "Receptorový potenciál je:",
+      "statements": [
+        {
+          "text": "Zvukový signál",
+          "correct": false
+        },
+        {
+          "text": "Vodivostný signál",
+          "correct": false
+        },
+        {
+          "text": "Vstupný signál",
+          "correct": true
+        },
+        {
+          "text": "Výstupný signál",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-97",
+      "category": 5,
+      "question": "Mapy elektrogastrografických signálov:",
+      "statements": [
+        {
+          "text": "Zobrazujú počas normálneho šírenia narastajúce hodnoty času vo forme relatívne pravidelných „časových pásiem“ (oblasti, zóny) zhora žalúdka smerom nadol",
+          "correct": true
+        },
+        {
+          "text": "Zobrazujú signály najviac z 5 elektród súčasne",
+          "correct": false
+        },
+        {
+          "text": "Zobrazujú rastúce amplitúdy akčného potenciálu zdola nahor počas normálneho šírenia",
+          "correct": false
+        },
+        {
+          "text": "Môžu zobrazovať zablokovanie vedenia signálov",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-243",
+      "category": 5,
+      "question": "Absolútna refraktérna fáza je:",
+      "statements": [
+        {
+          "text": "Čas, počas ktorého iný nadprahový podnet nebude viesť k druhému akčnému potenciálu",
+          "correct": true
+        },
+        {
+          "text": "Vzdialenosť, v ktorej iný nadprahový podnet nemôže vyvolať druhý akčný potenciál",
+          "correct": false
+        },
+        {
+          "text": "Čas, počas ktorého podprahový podnet bude viesť k druhému akčnému potenciálu",
+          "correct": false
+        },
+        {
+          "text": "Čas, počas ktorého podprahový podnet nebude viesť k druhému akčnému potenciálu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-246",
+      "category": 5,
+      "question": "Pri meraní elektroretinogramu:",
+      "statements": [
+        {
+          "text": "Sú použité unipolárne zvody",
+          "correct": true
+        },
+        {
+          "text": "Referenčné elektródy sú umiestnené na koži blízko oka",
+          "correct": true
+        },
+        {
+          "text": "Sú použité bipolárne zvody",
+          "correct": false
+        },
+        {
+          "text": "Bezkontaktné a aktívne elektródy sú spracované do šošoviek zo špeciálneho skla",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-249",
+      "category": 5,
+      "question": "Pohyb Na⁺ katiónov do bunky spôsobí:",
+      "statements": [
+        {
+          "text": "Hyperpolarizáciu",
+          "correct": false
+        },
+        {
+          "text": "Ultrapolarizáciu",
+          "correct": false
+        },
+        {
+          "text": "Repolarizáciu",
+          "correct": false
+        },
+        {
+          "text": "Depolarizáciu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-255",
+      "category": 5,
+      "question": "V amplitúdovej analýze EKG krivky:",
+      "statements": []
+    },
+    {
+      "id": "M1-256",
+      "category": 5,
+      "question": "Na⁺/K⁺ pumpa:",
+      "statements": [
+        {
+          "text": "Dáva do pohybu Na⁺ proti koncentračnému gradientu do bunky",
+          "correct": false
+        },
+        {
+          "text": "Dáva do pohybu Na⁺ proti koncentračnému gradientu z bunky",
+          "correct": true
+        },
+        {
+          "text": "Dáva do pohybu K⁺ po koncentračnom gradiente z bunky",
+          "correct": false
+        },
+        {
+          "text": "Dáva do pohybu K⁺ po koncentračnom gradiente do bunky",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-270",
+      "category": 5,
+      "question": "Elektrická vodivosť sa rovná:",
+      "statements": [
+        {
+          "text": "G = 1/R = I/U",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-272",
+      "category": 5,
+      "question": "Bipolárny zvod I v Einthovenovom trojuholníku ide:",
+      "statements": [
+        {
+          "text": "Od pravej ruky k ľavej ruke",
+          "correct": true
+        },
+        {
+          "text": "Horizontálne",
+          "correct": true
+        },
+        {
+          "text": "Od ľavej ruky k pravej ruke",
+          "correct": false
+        },
+        {
+          "text": "Vertikálne",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-274",
+      "category": 5,
+      "question": "Nosičom náboja môže byť:",
+      "statements": [
+        {
+          "text": "e⁻",
+          "correct": true
+        },
+        {
+          "text": "Cl⁻",
+          "correct": true
+        },
+        {
+          "text": "K⁺",
+          "correct": true
+        },
+        {
+          "text": "Cl",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-277",
+      "category": 5,
+      "question": "Elektrický odpor je rovný:",
+      "statements": [
+        {
+          "text": "R = U/I",
+          "correct": true
+        },
+        {
+          "text": "R = ρ · l/S",
+          "correct": true
+        },
+        {
+          "text": "R = 1/G",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-278",
+      "category": 5,
+      "question": "Výmenu materiálov medzi plazmou, interstíciom a bunkami dovoľujú telu:",
+      "statements": [
+        {
+          "text": "Artérie",
+          "correct": false
+        },
+        {
+          "text": "Vény",
+          "correct": false
+        },
+        {
+          "text": "Aorta",
+          "correct": false
+        },
+        {
+          "text": "Kapiláry",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-282",
+      "category": 5,
+      "question": "Typické amplitúdy alfa, beta, theta a delta vĺn pri elektroencefalografii sú:",
+      "statements": [
+        {
+          "text": "Zvyčajne menej ako 1 pV",
+          "correct": false
+        },
+        {
+          "text": "Zvyčajne menej ako 0,1 mV",
+          "correct": true
+        },
+        {
+          "text": "1 mV – 5 mV",
+          "correct": false
+        },
+        {
+          "text": "Približne 10 µV až 100 µV",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-8",
+      "category": 5,
+      "question": "Vnútorný elektrický odpor ľudského tela (krvný obeh, vnútorné orgány) je zvyčajne:",
+      "statements": [
+        {
+          "text": "Nižší ako vonkajší elektrický odpor (koža a svalstvo)",
+          "correct": true
+        },
+        {
+          "text": "Nižšia ako 1 W",
+          "correct": false
+        },
+        {
+          "text": "Vyšší ako vonkajší elektrický odpor (koža a svalstvo)",
+          "correct": false
+        },
+        {
+          "text": "Vyššia ako 1 MW",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-19",
+      "category": 5,
+      "question": "Časová biofyzikálna analýza elektrokardiografickej krivky obsahuje:",
+      "statements": [
+        {
+          "text": "Stanovenie srdcovej frekvencie",
+          "correct": true
+        },
+        {
+          "text": "Meranie výšky jednotlivých vĺn",
+          "correct": false
+        },
+        {
+          "text": "Meranie trvania jednotlivých vĺn",
+          "correct": true
+        },
+        {
+          "text": "Meranie hĺbky jednotlivých vĺn",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-21",
+      "category": 5,
+      "question": "Voltampérová charakteristika je:",
+      "statements": [
+        {
+          "text": "Časový priebeh elektrického odporu",
+          "correct": false
+        },
+        {
+          "text": "Časový priebeh elektrického napätia",
+          "correct": false
+        },
+        {
+          "text": "Závislosť elektrického prúdu od elektrického napätia",
+          "correct": true
+        },
+        {
+          "text": "Závislosť elektrického odporu od elektrického napätia",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-67",
+      "category": 5,
+      "question": "Interval ST je na elektrokardiograme:",
+      "statements": [
+        {
+          "text": "Aspoň teoreticky vodorovný",
+          "correct": false
+        },
+        {
+          "text": "Od konca komplexu QRS po koniec vlny T",
+          "correct": true
+        },
+        {
+          "text": "Tvorený segmentom ST a vlnou T",
+          "correct": true
+        },
+        {
+          "text": "Od konca komplexu QRS po začiatok vlny T",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-68",
+      "category": 5,
+      "question": "Ak je amplitúdová kalibrácia elektrokardiogramu 1 mV/10 mm:",
+      "statements": [
+        {
+          "text": "5 mm zodpovedá 500 µV",
+          "correct": true
+        },
+        {
+          "text": "1 mm zodpovedá 0,01 mV",
+          "correct": false
+        },
+        {
+          "text": "1 cm zodpovedá 0,1 mV",
+          "correct": false
+        },
+        {
+          "text": "10 mm zodpovedá 100 µV",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-69",
+      "category": 5,
+      "question": "Vodorovný úsek elektrokardiogramu sa nazýva:",
+      "statements": [
+        {
+          "text": "Vlna",
+          "correct": false
+        },
+        {
+          "text": "D komplex",
+          "correct": false
+        },
+        {
+          "text": "Segment",
+          "correct": true
+        },
+        {
+          "text": "Interval",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-70",
+      "category": 5,
+      "question": "Vodorovný úsek elektrokardiogramu:",
+      "statements": [
+        {
+          "text": "Od konca vlny T po začiatok vlny P sa nazýva segment TP",
+          "correct": true
+        },
+        {
+          "text": "Od konca vlny P po začiatok komplexu QRS sa môže nazývať segment PR",
+          "correct": true
+        },
+        {
+          "text": "Od konca vlny P po začiatok komplexu QRS sa môže nazývať segment PQ",
+          "correct": true
+        },
+        {
+          "text": "Od konca komplexu QRS po začiatok vlny T sa nazýva interval ST",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-71",
+      "category": 5,
+      "question": "Najvyššiu amplitúdu v ľubovoľnom zvode štandardného elektrokardiogramu má:",
+      "statements": [
+        {
+          "text": "Kmit S",
+          "correct": false
+        },
+        {
+          "text": "Vlna T",
+          "correct": false
+        },
+        {
+          "text": "Kmit R",
+          "correct": false
+        },
+        {
+          "text": "Vlna P",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-72",
+      "category": 5,
+      "question": "Elektrokardiogram je grafický záznam elektrickej činnosti:",
+      "statements": [
+        {
+          "text": "Mozgu",
+          "correct": false
+        },
+        {
+          "text": "Srdca",
+          "correct": true
+        },
+        {
+          "text": "Nervového vlákna",
+          "correct": false
+        },
+        {
+          "text": "Samostatnej svalovej bunky",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-73",
+      "category": 5,
+      "question": "Ak je časová kalibrácia elektrokardiogramu 25 mm/s:",
+      "statements": [
+        {
+          "text": "5 mm zodpovedá 20 ms",
+          "correct": false
+        },
+        {
+          "text": "1 cm zodpovedá 0,4 s",
+          "correct": true
+        },
+        {
+          "text": "1 mm zodpovedá 0,04 s",
+          "correct": true
+        },
+        {
+          "text": "1 mm zodpovedá 40 ms",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-74",
+      "category": 5,
+      "question": "Čiary, ktoré na nejakej ploche spájajú body s rovnakou hodnotou potenciálu, sa nazývajú:",
+      "statements": [
+        {
+          "text": "Izochory",
+          "correct": false
+        },
+        {
+          "text": "Izopotenciály",
+          "correct": true
+        },
+        {
+          "text": "Izobary",
+          "correct": false
+        },
+        {
+          "text": "Izotermy",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-75",
+      "category": 5,
+      "question": "Interval PQ je na elektrokardiograme:",
+      "statements": [
+        {
+          "text": "Od začiatku vlny P po začiatok komplexu QRS",
+          "correct": true
+        },
+        {
+          "text": "Od konca komplexu QRS po začiatok vlny P",
+          "correct": false
+        },
+        {
+          "text": "Od konca vlny P po začiatok komplexu QRS",
+          "correct": false
+        },
+        {
+          "text": "Je tvorený vlnou P a segmentom PQ",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-76",
+      "category": 5,
+      "question": "Interval QT na elektrokardiograme:",
+      "statements": [
+        {
+          "text": "Neobsahuje interval ST",
+          "correct": false
+        },
+        {
+          "text": "Je od začiatku komplexu QRS po koniec vlny T",
+          "correct": true
+        },
+        {
+          "text": "Obsahuje segment ST",
+          "correct": true
+        },
+        {
+          "text": "Obsahuje celý komplex QRS",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-57",
+      "category": 6,
+      "question": "Absorpcia svetla prechádzajúceho roztokom podľa Lambertovho-Beerovho zákona závisí od:",
+      "statements": [
+        {
+          "text": "Mólového absorpčného koeficientu roztoku",
+          "correct": true
+        },
+        {
+          "text": "Farby svetla",
+          "correct": true
+        },
+        {
+          "text": "Dĺžky dráhy svetelného lúča v roztoku",
+          "correct": true
+        },
+        {
+          "text": "Koncentrácie roztoku",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-58",
+      "category": 6,
+      "question": "Akú transmitanciu nastavíme pri kalibrácii spektrofotometra, keď na fotodetektor nedopadá svetlo?",
+      "statements": [
+        {
+          "text": "0 %",
+          "correct": true
+        },
+        {
+          "text": "1",
+          "correct": false
+        },
+        {
+          "text": "100 %",
+          "correct": false
+        },
+        {
+          "text": "∞",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-124",
+      "category": 6,
+      "question": "Transmitancii 100 % zodpovedá absorbancia:",
+      "statements": [
+        {
+          "text": "∞",
+          "correct": false
+        },
+        {
+          "text": "0",
+          "correct": true
+        },
+        {
+          "text": "1",
+          "correct": false
+        },
+        {
+          "text": "−1",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-125",
+      "category": 6,
+      "question": "Monochromátor:",
+      "statements": [
+        {
+          "text": "Prepúšťa len monochromatické svetlo",
+          "correct": true
+        },
+        {
+          "text": "Je súčasťou spektrofotometra",
+          "correct": true
+        },
+        {
+          "text": "Je súčasťou refraktometra",
+          "correct": false
+        },
+        {
+          "text": "Prepustí len polychromatické svetlo",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-126",
+      "category": 6,
+      "question": "Na kalibráciu spektrofotometra na praktickom cvičení sme použili:",
+      "statements": [
+        {
+          "text": "Destilovanú vodu",
+          "correct": true
+        },
+        {
+          "text": "Alkohol",
+          "correct": false
+        },
+        {
+          "text": "Fyziologický roztok",
+          "correct": false
+        },
+        {
+          "text": "Olej",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-127",
+      "category": 6,
+      "question": "Hrúbka kyvety používanej na praktickom cvičení zo spektrofotometrie bola:",
+      "statements": [
+        {
+          "text": "0,10 m",
+          "correct": false
+        },
+        {
+          "text": "10 mm",
+          "correct": true
+        },
+        {
+          "text": "1 cm",
+          "correct": true
+        },
+        {
+          "text": "1 dm",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-129",
+      "category": 6,
+      "question": "Žltý roztok:",
+      "statements": [
+        {
+          "text": "Absorbuje najmä svetlo žltej farby",
+          "correct": false
+        },
+        {
+          "text": "Absorbuje všetky časti viditeľného spektra rovnako",
+          "correct": false
+        },
+        {
+          "text": "Prepúšťa najmä svetlo žltej farby",
+          "correct": true
+        },
+        {
+          "text": "Absorbuje najmä svetlo farby, ktorá je komplementárna k žltej farbe",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-161",
+      "category": 6,
+      "question": "Transmitancia závisí od koncentrácie roztoku:",
+      "statements": [
+        {
+          "text": "Priamoúmerne",
+          "correct": false
+        },
+        {
+          "text": "Exponenciálne",
+          "correct": true
+        },
+        {
+          "text": "Lineárne",
+          "correct": false
+        },
+        {
+          "text": "Kvadraticky",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-162",
+      "category": 6,
+      "question": "Transmitancia je:",
+      "statements": [
+        {
+          "text": "Podiel intenzity svetla prejdeného roztokom a intenzity dopadajúceho svetla",
+          "correct": true
+        },
+        {
+          "text": "Rozdiel intenzity svetla prejdeného roztokom a intenzity dopadajúceho svetla",
+          "correct": false
+        },
+        {
+          "text": "Súčet intenzity svetla prejdeného roztokom a intenzity dopadajúceho svetla",
+          "correct": false
+        },
+        {
+          "text": "Súčin intenzity svetla prejdeného roztokom a intenzity dopadajúceho svetla",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-163",
+      "category": 6,
+      "question": "Prístroj na meranie absorbancie svetla prechádzajúceho roztokom sa nazýva:",
+      "statements": [
+        {
+          "text": "Absorbátor",
+          "correct": false
+        },
+        {
+          "text": "Spektrofotometer",
+          "correct": true
+        },
+        {
+          "text": "Refraktometer",
+          "correct": false
+        },
+        {
+          "text": "Viskozimeter",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-164",
+      "category": 6,
+      "question": "Prístroj na meranie transmitancie svetla prechádzajúceho roztokom sa nazýva:",
+      "statements": [
+        {
+          "text": "Refraktometer",
+          "correct": false
+        },
+        {
+          "text": "Spektrofotometer",
+          "correct": true
+        },
+        {
+          "text": "Polarimeter",
+          "correct": false
+        },
+        {
+          "text": "Stalagmometer",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-165",
+      "category": 6,
+      "question": "Absorpcia svetla prechádzajúceho roztokom závisí od:",
+      "statements": [
+        {
+          "text": "Vlnovej dĺžky svetla",
+          "correct": true
+        },
+        {
+          "text": "Frekvencie svetla",
+          "correct": true
+        },
+        {
+          "text": "Rýchlosti svetla v roztoku",
+          "correct": false
+        },
+        {
+          "text": "Indexu lomu roztoku",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-167",
+      "category": 6,
+      "question": "Pri prechode svetla roztokom podľa Lambertovho-Beerovho zákona dochádza k:",
+      "statements": [
+        {
+          "text": "Adsorpcii žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Absorpcii žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Zmene indexu lomu žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Zmene intenzity žiarenia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-258",
+      "category": 6,
+      "question": "Keď svetlo prejde cez prostredie, podľa Lambertovho–Beerovho zákona môžu nastať tieto javy:",
+      "statements": [
+        {
+          "text": "Absorpcia žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Adsorpcia žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Zmena intenzity žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Zmena indexu lomu žiarenia",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-5",
+      "category": 7,
+      "question": "Kvapka sa od ústia kapiláry stalagmometra odtrhne, ak je:",
+      "statements": [
+        {
+          "text": "Sila povrchového napätia prekonaná hydrostatickým tlakom",
+          "correct": false
+        },
+        {
+          "text": "Sila povrchového napätia prekonaná hustotou kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Hmotnosť kvapky prekonaná silou povrchového napätia",
+          "correct": false
+        },
+        {
+          "text": "Sila povrchového napätia prekonaná tiažou kvapky",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-12",
+      "category": 7,
+      "question": "Kapilárnu eleváciu pozorujeme pri kvapalinách:",
+      "statements": [
+        {
+          "text": "Zmáčavých aj nezmáčavých",
+          "correct": false
+        },
+        {
+          "text": "Zmáčavých",
+          "correct": true
+        },
+        {
+          "text": "Nezmáčavých",
+          "correct": false
+        },
+        {
+          "text": "Nad bodom varu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-15",
+      "category": 7,
+      "question": "Ak pozorujeme kapilárnu eleváciu, potom je hladina kvapaliny v kapiláre:",
+      "statements": [
+        {
+          "text": "Vypuklá a vyššia ako hladina kvapaliny v nádobe",
+          "correct": false
+        },
+        {
+          "text": "Dutá a vyššia ako hladina kvapaliny v nádobe",
+          "correct": true
+        },
+        {
+          "text": "Vypuklá a nižšia ako hladina kvapaliny v nádobe",
+          "correct": false
+        },
+        {
+          "text": "Dutá a nižšia ako hladina kvapaliny v nádobe",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-23",
+      "category": 7,
+      "question": "Kvapková (stalagmometrická) metóda merania povrchového napätia kvapaliny je metóda:",
+      "statements": [
+        {
+          "text": "Priama",
+          "correct": false
+        },
+        {
+          "text": "Porovnávacia",
+          "correct": true
+        },
+        {
+          "text": "Grafická",
+          "correct": false
+        },
+        {
+          "text": "Nepriama",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-25",
+      "category": 7,
+      "question": "Fyzikálna jednotka dynamickej viskozity (η) je:",
+      "statements": [
+        {
+          "text": "kg · m⁻¹ · s⁻¹",
+          "correct": true
+        },
+        {
+          "text": "Pa · s",
+          "correct": true
+        },
+        {
+          "text": "m² · s⁻¹",
+          "correct": false
+        },
+        {
+          "text": "mPa · s",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-28",
+      "category": 7,
+      "question": "Na praktických cvičeniach z viskozimetrie sme priamo merali:",
+      "statements": [
+        {
+          "text": "Relatívnu viskozitu kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Dynamickú viskozitu kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Kinematickú viskozitu kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Prietokový čas",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-30",
+      "category": 7,
+      "question": "Na meranie povrchového napätia kvapaliny je možné využiť:",
+      "statements": [
+        {
+          "text": "Hagenov-Poiseuillov vzťah",
+          "correct": false
+        },
+        {
+          "text": "Vnútorné trenie kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Kapilárne javy",
+          "correct": true
+        },
+        {
+          "text": "Stokesov zákon",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-38",
+      "category": 7,
+      "question": "Na praktických cvičeniach bol číselný výsledok merania viskozity vyjadrený ako:",
+      "statements": [
+        {
+          "text": "Priemer ± smerodajná odchýlka",
+          "correct": true
+        },
+        {
+          "text": "Relatívna viskozita",
+          "correct": false
+        },
+        {
+          "text": "Medián ± smerodajná odchýlka",
+          "correct": false
+        },
+        {
+          "text": "Modus ± smerodajná odchýlka",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-41",
+      "category": 7,
+      "question": "Povrchové napätie je spôsobené:",
+      "statements": [
+        {
+          "text": "Hustotou kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Vnútorným trením kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Medzimolekulovými kohéznymi silami v kvapaline",
+          "correct": true
+        },
+        {
+          "text": "Hydrostatickým tlakom kvapaliny",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-42",
+      "category": 7,
+      "question": "Povrchové napätie kvapaliny:",
+      "statements": [
+        {
+          "text": "Závisí od objemu kvapaliny v nádobe",
+          "correct": false
+        },
+        {
+          "text": "Závisí priamo úmerne od plochy povrchovej vrstvy kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Závisí nepriamo úmerne od plochy povrchovej vrstvy kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Nezávisí od plochy povrchovej vrstvy kvapaliny",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-44",
+      "category": 7,
+      "question": "Pre povrchové napätie platí:",
+      "statements": [
+        {
+          "text": "Má význam v procese výmeny dýchacích plynov v pľúcnych alveolách",
+          "correct": true
+        },
+        {
+          "text": "Znižuje sa adsorpciou povrchovo aktívnej látky",
+          "correct": true
+        },
+        {
+          "text": "Kvapková metóda dávkovania liekov využíva jeho existenciu",
+          "correct": true
+        },
+        {
+          "text": "Pre danú kvapalinu v daných mikroklimatických podmienkach je konštantné",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-45",
+      "category": 7,
+      "question": "Meranie odporu, ktorý kladie kvapalina otáčavému pohybu telesa, sa využíva vo viskozimetroch:",
+      "statements": [
+        {
+          "text": "Telieskových",
+          "correct": false
+        },
+        {
+          "text": "Rotačných",
+          "correct": true
+        },
+        {
+          "text": "Vibračných",
+          "correct": false
+        },
+        {
+          "text": "Kapilárnych",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-49",
+      "category": 7,
+      "question": "Dôsledkom povrchového napätia kvapaliny je:",
+      "statements": [
+        {
+          "text": "Viskozita",
+          "correct": false
+        },
+        {
+          "text": "Laminárne prúdenie",
+          "correct": false
+        },
+        {
+          "text": "Osmóza",
+          "correct": false
+        },
+        {
+          "text": "Kapilárny tlak",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-54",
+      "category": 7,
+      "question": "Pri správnom meraní Ubbelohdeho kapilárnym viskozimetrom musia byť dodržané nasledovné podmienky:",
+      "statements": [
+        {
+          "text": "Laminárne prúdenie v kapiláre",
+          "correct": true
+        },
+        {
+          "text": "V kapiláre nesmú byť bubliny",
+          "correct": true
+        },
+        {
+          "text": "Konštantná teplota meranej kvapaliny",
+          "correct": true
+        },
+        {
+          "text": "Turbulentné prúdenie v kapiláre",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-56",
+      "category": 7,
+      "question": "Ak sa v krvi zníži počet červených krviniek, viskozita krvi sa:",
+      "statements": [
+        {
+          "text": "Zvýši",
+          "correct": false
+        },
+        {
+          "text": "Zdvojnásobí",
+          "correct": false
+        },
+        {
+          "text": "Nezmení",
+          "correct": false
+        },
+        {
+          "text": "Zníži",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-74",
+      "category": 7,
+      "question": "Poloha ťažiska ľudského organizmu:",
+      "statements": [
+        {
+          "text": "Súvisí s rovnováhou",
+          "correct": true
+        },
+        {
+          "text": "Súvisí so stabilitou",
+          "correct": true
+        },
+        {
+          "text": "Nemôže byť mimo tela",
+          "correct": false
+        },
+        {
+          "text": "Môže byť mimo tela",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-87",
+      "category": 7,
+      "question": "Hookov zákon pre prípad deformácie ťahom hovorí, že normálové napätie je:",
+      "statements": [
+        {
+          "text": "Konštantné",
+          "correct": false
+        },
+        {
+          "text": "Priamoúmerné relatívnemu predĺženiu",
+          "correct": true
+        },
+        {
+          "text": "Priamoúmerné prevrátenej hodnote relatívneho predĺženia",
+          "correct": false
+        },
+        {
+          "text": "Nepriamoúmerné relatívnemu predĺženiu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-91",
+      "category": 7,
+      "question": "Youngov modul pružnosti sa udáva vo fyzikálnych jednotkách:",
+      "statements": [
+        {
+          "text": "Meter",
+          "correct": false
+        },
+        {
+          "text": "Newton",
+          "correct": false
+        },
+        {
+          "text": "Pascal",
+          "correct": true
+        },
+        {
+          "text": "Gigapascal",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-98",
+      "category": 7,
+      "question": "Pri analýze pohybu sa ľudský organizmus považuje za:",
+      "statements": [
+        {
+          "text": "Rigidný systém",
+          "correct": false
+        },
+        {
+          "text": "Sústavu navzájom nezávislých segmentov",
+          "correct": false
+        },
+        {
+          "text": "Sústavu navzájom viazaných segmentov",
+          "correct": true
+        },
+        {
+          "text": "Sústavu voľne sa pohybujúcich segmentov",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-105",
+      "category": 7,
+      "question": "Modul pružnosti ľudskej kosti závisí od:",
+      "statements": [
+        {
+          "text": "Hustoty kosti",
+          "correct": true
+        },
+        {
+          "text": "Typu deformácie",
+          "correct": true
+        },
+        {
+          "text": "Typu kostného tkaniva",
+          "correct": true
+        },
+        {
+          "text": "Smeru deformácie vzhľadom na os kosti",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-106",
+      "category": 7,
+      "question": "Fyzikálnou jednotkou povrchového napätia je:",
+      "statements": [
+        {
+          "text": "J · m⁻¹",
+          "correct": false
+        },
+        {
+          "text": "J · m⁻²",
+          "correct": true
+        },
+        {
+          "text": "Pa · s",
+          "correct": false
+        },
+        {
+          "text": "N · m⁻²",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-245",
+      "category": 7,
+      "question": "Pri svalovej kontrakcii nastáva:",
+      "statements": [
+        {
+          "text": "Konformačná zmena myozínovej hlavičky",
+          "correct": true
+        },
+        {
+          "text": "Konformačná zmena aktínového filamentu",
+          "correct": false
+        },
+        {
+          "text": "Štiepenie vápnika z myozínovej hlavičky",
+          "correct": false
+        },
+        {
+          "text": "Štiepenie myozínovej hlavičky zo zostávajúceho myozínového filamentu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-257",
+      "category": 7,
+      "question": "Páka je v rovnováhe, keď:",
+      "statements": [
+        {
+          "text": "Vektorový súčin ramena bremena a sily, ktorou bremeno pôsobí na páku, sa rovná vektorovému súčinu ramena sily a sily",
+          "correct": false
+        },
+        {
+          "text": "Výsledná sila na páke je 0",
+          "correct": true
+        },
+        {
+          "text": "Vektorový súčet ramena bremena a sily, ktorou bremeno pôsobí na páku, sa rovná vektorovému súčtu ramena sily a sily",
+          "correct": false
+        },
+        {
+          "text": "Výsledný krútiaci moment na páke je 0",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-275",
+      "category": 7,
+      "question": "Podľa smeru deformujúcej sily môžu byť deformácie:",
+      "statements": [
+        {
+          "text": "Ťažná",
+          "correct": true
+        },
+        {
+          "text": "Torzná",
+          "correct": true
+        },
+        {
+          "text": "Elastická",
+          "correct": false
+        },
+        {
+          "text": "Plastická",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-20",
+      "category": 7,
+      "question": "Na meranie povrchového napätia kvapaliny kvapkovou (stalagmometrickou) metódou sa využíva:",
+      "statements": [
+        {
+          "text": "Turbulentné prúdenie kvapaliny",
+          "correct": false
+        },
+        {
+          "text": "Výška stĺpca kvapaliny pri kapilárnej depresii",
+          "correct": false
+        },
+        {
+          "text": "Výška stĺpca kvapaliny pri kapilárnej elevácii",
+          "correct": false
+        },
+        {
+          "text": "Závislosť počtu kvapiek od povrchového napätia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-26",
+      "category": 7,
+      "question": "Na výpočet dynamickej viskozity kvapaliny na praktickom cvičení sme potrebovali:",
+      "statements": [
+        {
+          "text": "Konštantu viskozimetra",
+          "correct": true
+        },
+        {
+          "text": "Hustotu kvapaliny",
+          "correct": true
+        },
+        {
+          "text": "Dĺžku kapiláry",
+          "correct": false
+        },
+        {
+          "text": "Teplotu kvapaliny",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-82",
+      "category": 7,
+      "question": "Kinematická viskozita sa udáva v jednotkách SI:",
+      "statements": [
+        {
+          "text": "m² · s⁻¹",
+          "correct": true
+        },
+        {
+          "text": "N · s⁻¹",
+          "correct": false
+        },
+        {
+          "text": "m · s⁻²",
+          "correct": false
+        },
+        {
+          "text": "Pa · s",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-84",
+      "category": 7,
+      "question": "Vzájomný vzťah medzi dynamickou viskozitou η a kinematickou viskozitou ν je (ρ je hustota):",
+      "statements": [
+        {
+          "text": "η = ρ / ν",
+          "correct": false
+        },
+        {
+          "text": "ρ = η · ν",
+          "correct": false
+        },
+        {
+          "text": "ν = ρ · η",
+          "correct": false
+        },
+        {
+          "text": "η = ρ · ν",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-85",
+      "category": 7,
+      "question": "Dynamická viskozita sa udáva v jednotkách SI:",
+      "statements": [
+        {
+          "text": "m · s",
+          "correct": false
+        },
+        {
+          "text": "Pa · s",
+          "correct": true
+        },
+        {
+          "text": "Pa · s⁻¹",
+          "correct": false
+        },
+        {
+          "text": "m · s⁻¹",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-86",
+      "category": 7,
+      "question": "Povrchové napätie sa udáva v jednotkách:",
+      "statements": [
+        {
+          "text": "n · m⁻¹",
+          "correct": false
+        },
+        {
+          "text": "m · N",
+          "correct": false
+        },
+        {
+          "text": "m · N⁻¹",
+          "correct": false
+        },
+        {
+          "text": "N · m⁻¹",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-87",
+      "category": 7,
+      "question": "Povrchové napätie σ je definované vzťahom (E je energia, F je sila, l je dĺžka, S je plocha):",
+      "statements": [
+        {
+          "text": "σ = F/l",
+          "correct": true
+        },
+        {
+          "text": "σ = E/S · l",
+          "correct": false
+        },
+        {
+          "text": "σ = E/l",
+          "correct": false
+        },
+        {
+          "text": "σ = F/S",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-89",
+      "category": 7,
+      "question": "Povrchové napätie je:",
+      "statements": [
+        {
+          "text": "Energia pôsobiaca celkove na povrch",
+          "correct": false
+        },
+        {
+          "text": "Sila pôsobiaca na jednotku dĺžky povrchu v rovine povrchu",
+          "correct": true
+        },
+        {
+          "text": "Sila pôsobiaca na jednotku plochy povrchu kolmo na povrch",
+          "correct": false
+        },
+        {
+          "text": "Energia pôsobiaca na jednotku plochy povrchu kolmo na povrch",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-90",
+      "category": 7,
+      "question": "Sila pôsobiaca rovnobežne s povrchom kvapaliny kolmo na dĺžkovú jednotku sa nazýva:",
+      "statements": [
+        {
+          "text": "Tlak",
+          "correct": false
+        },
+        {
+          "text": "Povrchové napätie",
+          "correct": true
+        },
+        {
+          "text": "Vnútorné trenie",
+          "correct": false
+        },
+        {
+          "text": "Vztlaková sila",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M3-91",
+      "category": 7,
+      "question": "Viskozita kvapalín a plynov charakterizuje:",
+      "statements": [
+        {
+          "text": "Ich vonkajšie trenie",
+          "correct": false
+        },
+        {
+          "text": "Výšku stĺpca kvapaliny alebo plynu vo valci merajúcom tlak tekutiny pri prúdení",
+          "correct": false
+        },
+        {
+          "text": "Ich vnútorné trenie",
+          "correct": true
+        },
+        {
+          "text": "Ich chemické zloženie",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-1",
+      "category": 8,
+      "question": "Bioimpedančná váha použitá na praktických cvičeniach nemeria:",
+      "statements": [
+        {
+          "text": "Telesnú hmotnosť",
+          "correct": false
+        },
+        {
+          "text": "Telesnú výšku",
+          "correct": true
+        },
+        {
+          "text": "Množstvo viscerálneho tuku",
+          "correct": false
+        },
+        {
+          "text": "Percentuálny podiel kostrového svalstva",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-8",
+      "category": 8,
+      "question": "Podmienky, pri ktorých je celková energetická spotreba organizmu rovná bazálnemu metabolizmu, zahŕňajú:",
+      "statements": [
+        {
+          "text": "Spánok",
+          "correct": false
+        },
+        {
+          "text": "Fyzický pokoj",
+          "correct": true
+        },
+        {
+          "text": "Postabsorpčný stav",
+          "correct": true
+        },
+        {
+          "text": "Psychický pokoj",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-10",
+      "category": 8,
+      "question": "Index telesnej hmotnosti (BMI) muža s hmotnosťou 120 kg a výškou 200 cm je:",
+      "statements": [
+        {
+          "text": "120 %",
+          "correct": false
+        },
+        {
+          "text": "Vyšší ako norma",
+          "correct": true
+        },
+        {
+          "text": "0,003 kg/m²",
+          "correct": false
+        },
+        {
+          "text": "30 kg/m²",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-32",
+      "category": 8,
+      "question": "Povrch tela spravidla vyjadrujeme vo fyzikálnych jednotkách:",
+      "statements": [
+        {
+          "text": "kg",
+          "correct": false
+        },
+        {
+          "text": "kg/m²",
+          "correct": false
+        },
+        {
+          "text": "m",
+          "correct": false
+        },
+        {
+          "text": "m²",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-34",
+      "category": 8,
+      "question": "Množstvo energie nevyhnutnej na zabezpečenie funkcií organizmu v bazálnom stave nazývame:",
+      "statements": [
+        {
+          "text": "Maximálna kinetická energia",
+          "correct": false
+        },
+        {
+          "text": "Minimálna polohová energia",
+          "correct": false
+        },
+        {
+          "text": "Balančný metabolizmus",
+          "correct": false
+        },
+        {
+          "text": "Bazálny metabolizmus",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-60",
+      "category": 8,
+      "question": "Relatívnu vlhkosť vzduchu meriame pomocou:",
+      "statements": [
+        {
+          "text": "Vlasového vlhkomera",
+          "correct": true
+        },
+        {
+          "text": "Assmannovho psychrometra",
+          "correct": true
+        },
+        {
+          "text": "Augustovho psychrometra",
+          "correct": true
+        },
+        {
+          "text": "Aneroidu",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-61",
+      "category": 8,
+      "question": "Rozdiel medzi teplotou tela a strednou teplotnou úrovňou ruky sa nazýva:",
+      "statements": [
+        {
+          "text": "Vonkajší teplotný spád",
+          "correct": false
+        },
+        {
+          "text": "Vnútorná teplotná diferencia",
+          "correct": false
+        },
+        {
+          "text": "Stredná teplotná úroveň",
+          "correct": false
+        },
+        {
+          "text": "Vnútorný teplotný spád",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-62",
+      "category": 8,
+      "question": "Princíp bimetalového teplomera matematicky popisuje rovnica (l₀ – počiatočná dĺžka, lₜ – výsledná dĺžka, Δt = t − t₀ – rozdiel teplôt, α – koeficient teplotnej dĺžkovej rozťažnosti):",
+      "statements": [
+        {
+          "text": "l₀ = lₜ · (1 + α · Δt)",
+          "correct": false
+        },
+        {
+          "text": "lₜ = l₀ · (1 + α · t)",
+          "correct": false
+        },
+        {
+          "text": "lₜ = l₀ · (1 + α · t₀)",
+          "correct": false
+        },
+        {
+          "text": "lₜ = l₀ · (1 + α · Δt)",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-69",
+      "category": 8,
+      "question": "Kondukcia tepla je jeho prenos:",
+      "statements": [
+        {
+          "text": "Priamym kontaktom",
+          "correct": true
+        },
+        {
+          "text": "Vyparovaním",
+          "correct": false
+        },
+        {
+          "text": "Prúdením",
+          "correct": false
+        },
+        {
+          "text": "Sálaním",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-88",
+      "category": 8,
+      "question": "Teplota je:",
+      "statements": [
+        {
+          "text": "Stavová veličina",
+          "correct": true
+        },
+        {
+          "text": "Vyjadrená v kelvinoch [K]",
+          "correct": true
+        },
+        {
+          "text": "Forma energie",
+          "correct": false
+        },
+        {
+          "text": "Vyjadrená v jouloch [J]",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-101",
+      "category": 8,
+      "question": "Pri teplote vzduchu 23 °C je maximálna vlhkosť vzduchu 20,5 g · m⁻³ a relatívna vlhkosť vzduchu 50 %. Absolútna vlhkosť vzduchu je:",
+      "statements": [
+        {
+          "text": "10,25 kg · m⁻³",
+          "correct": false
+        },
+        {
+          "text": "10,25 g · m⁻³",
+          "correct": true
+        },
+        {
+          "text": "10,25 g · cm⁻³",
+          "correct": false
+        },
+        {
+          "text": "10,25 kg · cm⁻³",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-104",
+      "category": 8,
+      "question": "S rastúcou teplotou:",
+      "statements": [
+        {
+          "text": "Dochádza k posunu radiačného maxima k vyšším frekvenciám",
+          "correct": true
+        },
+        {
+          "text": "Rastie množstvo vyžiarenej energie",
+          "correct": true
+        },
+        {
+          "text": "Dochádza k posunu radiačného maxima k nižším frekvenciám",
+          "correct": false
+        },
+        {
+          "text": "Teleso emituje viac žiarenia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-107",
+      "category": 8,
+      "question": "Vlnová dĺžka vyžarovaného infračerveného žiarenia z chrbta ruky zdravého jedinca je rádovo:",
+      "statements": [
+        {
+          "text": "10⁴ nm",
+          "correct": true
+        },
+        {
+          "text": "10⁻⁴ nm",
+          "correct": false
+        },
+        {
+          "text": "10 μm",
+          "correct": true
+        },
+        {
+          "text": "1 μm",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-108",
+      "category": 8,
+      "question": "Kontaktná termografická metóda využíva:",
+      "statements": [
+        {
+          "text": "Odrazené elektromagnetické vlny vo viditeľnej časti spektra",
+          "correct": true
+        },
+        {
+          "text": "Farebný termometer",
+          "correct": false
+        },
+        {
+          "text": "Zmenu polohy cholesterických kvapalných kryštálov v závislosti od zmeny teploty",
+          "correct": true
+        },
+        {
+          "text": "Zmenu farieb termálneho profilu v závislosti od zmeny teploty",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-109",
+      "category": 8,
+      "question": "Termokamera deteguje:",
+      "statements": [
+        {
+          "text": "Elektromagnetického žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Mechanického vlnenia",
+          "correct": false
+        },
+        {
+          "text": "Röntgenového žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Infračerveného žiarenia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-110",
+      "category": 8,
+      "question": "Bezkontaktné metódy merania teploty sú založené na detekcii:",
+      "statements": [
+        {
+          "text": "Elektromagnetického žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Mechanického vlnenia",
+          "correct": false
+        },
+        {
+          "text": "Röntgenového žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Infračerveného žiarenia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-111",
+      "category": 8,
+      "question": "Odpor senzora v odporových teplomeroch:",
+      "statements": [
+        {
+          "text": "Klesá so stúpajúcou teplotou",
+          "correct": false
+        },
+        {
+          "text": "Stúpa so stúpajúcou teplotou",
+          "correct": true
+        },
+        {
+          "text": "Nie je dôležitý",
+          "correct": false
+        },
+        {
+          "text": "Nezávisí od teploty",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-112",
+      "category": 8,
+      "question": "Nahý človek v miestnosti bez prúdenia vzduchu za normálnej teploty a tlaku stratí najviac tepla:",
+      "statements": [
+        {
+          "text": "Radiáciou",
+          "correct": true
+        },
+        {
+          "text": "Konvekciou",
+          "correct": false
+        },
+        {
+          "text": "Kondukciou",
+          "correct": false
+        },
+        {
+          "text": "Vyparovaním",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-113",
+      "category": 8,
+      "question": "Číselná hodnota teploty, ktorá je najbližšie k teplote telesného jadra, je nameraná:",
+      "statements": [
+        {
+          "text": "Pod jazykom",
+          "correct": false
+        },
+        {
+          "text": "V uchu",
+          "correct": false
+        },
+        {
+          "text": "Na čele",
+          "correct": false
+        },
+        {
+          "text": "V rekte",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-114",
+      "category": 8,
+      "question": "Teplota nameraná v rekte je:",
+      "statements": [
+        {
+          "text": "Vyššia ako teplota nameraná v axile",
+          "correct": true
+        },
+        {
+          "text": "Nižšia ako teplota nameraná v axile",
+          "correct": false
+        },
+        {
+          "text": "Rovnaká ako teplota nameraná v axile",
+          "correct": false
+        },
+        {
+          "text": "Vyššia ako teplota nameraná na čele",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-115",
+      "category": 8,
+      "question": "Rozdiel medzi strednou teplotnou úrovňou ruky a teplotou miestnosti sa nazýva:",
+      "statements": [
+        {
+          "text": "Vonkajšia teplotná diferencia",
+          "correct": false
+        },
+        {
+          "text": "Vonkajší teplotný spád",
+          "correct": true
+        },
+        {
+          "text": "Vnútorný teplotný spád",
+          "correct": false
+        },
+        {
+          "text": "Stredná teplotná úroveň",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-116",
+      "category": 8,
+      "question": "Stredná hodnota teploty vypočítaná na praktickom cvičení z hodnôt nameraných v jednotlivých bodoch na chrbte ruky sa nazýva:",
+      "statements": [
+        {
+          "text": "Modus",
+          "correct": false
+        },
+        {
+          "text": "Stredná teplotná úroveň",
+          "correct": true
+        },
+        {
+          "text": "Medián",
+          "correct": false
+        },
+        {
+          "text": "Priemer",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-117",
+      "category": 8,
+      "question": "Povrchová teplota na chrbte ruky zdravého človeka je:",
+      "statements": [
+        {
+          "text": "Nižšia ako teplota telesného jadra",
+          "correct": true
+        },
+        {
+          "text": "Vyššia ako teplota telesného jadra",
+          "correct": false
+        },
+        {
+          "text": "Nižšia ako teplota okolitého prostredia",
+          "correct": false
+        },
+        {
+          "text": "Vyššia ako teplota okolitého prostredia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-118",
+      "category": 8,
+      "question": "Telesná teplota človeka závisí aj od:",
+      "statements": [
+        {
+          "text": "Pohlavia",
+          "correct": true
+        },
+        {
+          "text": "Fyzickej aktivity",
+          "correct": true
+        },
+        {
+          "text": "Časti dňa",
+          "correct": true
+        },
+        {
+          "text": "Veku",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-120",
+      "category": 8,
+      "question": "Teplo je:",
+      "statements": [
+        {
+          "text": "Stavová veličina",
+          "correct": false
+        },
+        {
+          "text": "Forma energie",
+          "correct": true
+        },
+        {
+          "text": "Vyjadrené v kelvinoch [K]",
+          "correct": false
+        },
+        {
+          "text": "Vyjadrené v jouloch [J]",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-121",
+      "category": 8,
+      "question": "Evaporácia je:",
+      "statements": [
+        {
+          "text": "Proces spojený s ochladzovaním povrchu",
+          "correct": true
+        },
+        {
+          "text": "Proces spojený s ohrievaním povrchu",
+          "correct": false
+        },
+        {
+          "text": "Proces spojený s výdajom tepla",
+          "correct": true
+        },
+        {
+          "text": "Závisí od vlhkosti vzduchu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-122",
+      "category": 8,
+      "question": "Radiácia tepla z organizmu je na báze:",
+      "statements": [
+        {
+          "text": "Infračerveného žiarenia",
+          "correct": true
+        },
+        {
+          "text": "Priameho kontaktu organizmu s jeho hmotným okolím",
+          "correct": false
+        },
+        {
+          "text": "Prúdenia tepla, napr. výdychom",
+          "correct": false
+        },
+        {
+          "text": "Vyparovania",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-123",
+      "category": 8,
+      "question": "Konvekcia tepla je jeho prenos:",
+      "statements": [
+        {
+          "text": "Priamym kontaktom",
+          "correct": false
+        },
+        {
+          "text": "Prúdením",
+          "correct": true
+        },
+        {
+          "text": "Sálaním",
+          "correct": false
+        },
+        {
+          "text": "Vyparovaním",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-150",
+      "category": 8,
+      "question": "Princíp kvapalinového teplomera matematicky popisuje rovnica (V₀ – počiatočný objem, Vₜ – výsledný objem, Δt = t − t₀ – rozdiel teplôt, β – koeficient teplotnej objemovej rozťažnosti):",
+      "statements": [
+        {
+          "text": "Vₜ = V₀ · (1 + β · Δt)",
+          "correct": true
+        },
+        {
+          "text": "V₀ = Vₜ · (1 + β · Δt)",
+          "correct": false
+        },
+        {
+          "text": "Vₜ = V₀ · (1 + β · t)",
+          "correct": false
+        },
+        {
+          "text": "V₀ = Vₜ · (1 + β · t₀)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-152",
+      "category": 8,
+      "question": "Závislosť elektrického odporu od teploty sa využíva v:",
+      "statements": [
+        {
+          "text": "Termistoroch",
+          "correct": true
+        },
+        {
+          "text": "Teplomeroch využívajúcich kvapalné kryštály",
+          "correct": false
+        },
+        {
+          "text": "Odporových teplomeroch",
+          "correct": true
+        },
+        {
+          "text": "Bimetalových teplomeroch",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-153",
+      "category": 8,
+      "question": "Kvapalinové teplomery využívajú na meranie teploty:",
+      "statements": [
+        {
+          "text": "Teplotnú dĺžkovú rozťažnosť kvapalín",
+          "correct": false
+        },
+        {
+          "text": "Teplotnú objemovú rozťažnosť kvapalín",
+          "correct": true
+        },
+        {
+          "text": "Teplotnú závislosť tlakových zmien v kvapaline",
+          "correct": false
+        },
+        {
+          "text": "Pascalov zákon",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-154",
+      "category": 8,
+      "question": "Bimetalový teplomer využíva na meranie teploty:",
+      "statements": [
+        {
+          "text": "Teplotnú závislosť elektrického odporu vodičov",
+          "correct": false
+        },
+        {
+          "text": "Teplotnú dĺžkovú rozťažnosť kovov",
+          "correct": true
+        },
+        {
+          "text": "Teplotnej dĺžkovej rozťažnosti ľudského vlasu",
+          "correct": false
+        },
+        {
+          "text": "Teplotnú závislosť elektrickej vodivosti kovov",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-155",
+      "category": 8,
+      "question": "Tlak vzduchu v danom mieste na povrchu Zeme závisí od:",
+      "statements": [
+        {
+          "text": "Nadmorskej výšky",
+          "correct": true
+        },
+        {
+          "text": "Tiažového zrýchlenia",
+          "correct": true
+        },
+        {
+          "text": "Hrúbky vrstvy atmosféry nad ním",
+          "correct": true
+        },
+        {
+          "text": "Teploty vzduchu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-156",
+      "category": 8,
+      "question": "Aneroid je hlavnou súčasťou:",
+      "statements": [
+        {
+          "text": "Termografu",
+          "correct": false
+        },
+        {
+          "text": "Barografu",
+          "correct": true
+        },
+        {
+          "text": "Barometra",
+          "correct": true
+        },
+        {
+          "text": "Vlhkomera",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-157",
+      "category": 8,
+      "question": "Na praktickom cvičení ste termokamerou merali na ruke:",
+      "statements": [
+        {
+          "text": "Viac bodov ako 2",
+          "correct": false
+        },
+        {
+          "text": "Menej bodov ako 2",
+          "correct": false
+        },
+        {
+          "text": "Presne 2 body",
+          "correct": true
+        },
+        {
+          "text": "Viac bodov ako 5",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-158",
+      "category": 8,
+      "question": "Na praktickom cvičení ste kontaktným termistorovým teplomerom merali na ruke:",
+      "statements": [
+        {
+          "text": "Viac bodov ako 2",
+          "correct": true
+        },
+        {
+          "text": "Menej bodov ako 2",
+          "correct": false
+        },
+        {
+          "text": "Presne 2 body",
+          "correct": false
+        },
+        {
+          "text": "Viac bodov ako 5",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-197",
+      "category": 8,
+      "question": "Princíp odporového teplomera matematicky popisuje rovnica (R₀ – počiatočný elektrický odpor, Rₜ – výsledný elektrický odpor, Δt = t − t₀ – rozdiel teplôt, α – teplotný súčiniteľ elektrického odporu):",
+      "statements": [
+        {
+          "text": "Rₜ = R₀ · (1 + α · Δt)",
+          "correct": true
+        },
+        {
+          "text": "R₀ = Rₜ · (1 + α · Δt)",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-198",
+      "category": 8,
+      "question": "V prvej miestnosti bol medzi teplomermi na psychrometri nameraný rozdiel teplôt 2 °C, v druhej miestnosti 3 °C. Ak bola v oboch miestnostiach rovnaká teplota vzduchu, potom relatívna vlhkosť vzduchu bola:",
+      "statements": [
+        {
+          "text": "V prvej miestnosti vyššia",
+          "correct": true
+        },
+        {
+          "text": "V druhej miestnosti vyššia",
+          "correct": false
+        },
+        {
+          "text": "V prvej miestnosti nižšia",
+          "correct": false
+        },
+        {
+          "text": "V druhej miestnosti nižšia",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-199",
+      "category": 8,
+      "question": "Absolútna vlhkosť vzduchu pri danej teplote sa rovná:",
+      "statements": [
+        {
+          "text": "Súčinu relatívnej a maximálnej vlhkosti vzduchu",
+          "correct": true
+        },
+        {
+          "text": "Podielu relatívnej a maximálnej vlhkosti vzduchu",
+          "correct": false
+        },
+        {
+          "text": "Súčinu relatívnej vlhkosti a teploty vzduchu",
+          "correct": false
+        },
+        {
+          "text": "Hustote vodnej pary obsiahnutej vo vzduchu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-253",
+      "category": 8,
+      "question": "Odpor R v odporovom teplomere sa v závislosti od rozdielu teplôt (t − t₀) mení:",
+      "statements": [
+        {
+          "text": "Exponenciálne",
+          "correct": false
+        },
+        {
+          "text": "Nezávisle od teploty",
+          "correct": false
+        },
+        {
+          "text": "Lineárne",
+          "correct": true
+        },
+        {
+          "text": "Kvadraticky",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-263",
+      "category": 8,
+      "question": "Počas praktických cvičení z antropometrie sme merali výšku pomocou:",
+      "statements": [
+        {
+          "text": "Lekárskej váhy s posuvným meradlom",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M3-28",
+      "category": 8,
+      "question": "BMI je v antropometrii skratka pre:",
+      "statements": [
+        {
+          "text": "Index svalovej hmoty",
+          "correct": false
+        },
+        {
+          "text": "Povrch tela podľa Mostellera",
+          "correct": false
+        },
+        {
+          "text": "Brocov index",
+          "correct": false
+        },
+        {
+          "text": "Index telesnej hmotnosti",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-66",
+      "category": 9,
+      "question": "Objektív optického mikroskopu:",
+      "statements": [
+        {
+          "text": "Je zložený z mnohých šošoviek, ktoré spoločne fungujú ako rozptylná šošovka",
+          "correct": false
+        },
+        {
+          "text": "Tvorí jediná rozpojná šošovka",
+          "correct": false
+        },
+        {
+          "text": "Je zložený z mnohých šošoviek, ktoré spoločne fungujú ako spojná šošovka",
+          "correct": true
+        },
+        {
+          "text": "Určuje rozlíšenie optického mikroskopu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-73",
+      "category": 9,
+      "question": "Fyzikálnou jednotkou osvetlenia je:",
+      "statements": [
+        {
+          "text": "Candela",
+          "correct": false
+        },
+        {
+          "text": "Watt",
+          "correct": false
+        },
+        {
+          "text": "Lux",
+          "correct": true
+        },
+        {
+          "text": "Lumen",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-83",
+      "category": 9,
+      "question": "Pre vonkajší fotoelektrický jav je typické:",
+      "statements": [
+        {
+          "text": "Každý fotón odovzdá všetku svoju energiu iba jednému elektrónu",
+          "correct": true
+        },
+        {
+          "text": "Znižuje frekvenciu dopadajúceho elektromagnetického žiarenia",
+          "correct": false
+        },
+        {
+          "text": "Konverzia energie fotónu na výstupnú energiu a na kinetickú energiu elektrónu",
+          "correct": true
+        },
+        {
+          "text": "Prenos všetkej energie fotónu na elektrón v obale atómu",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-128",
+      "category": 9,
+      "question": "Červený predmet:",
+      "statements": [
+        {
+          "text": "Absorbuje všetky časti viditeľného spektra rovnako",
+          "correct": false
+        },
+        {
+          "text": "Odráža najmä svetlo červenej farby",
+          "correct": true
+        },
+        {
+          "text": "Absorbuje najmä svetlo červenej farby",
+          "correct": false
+        },
+        {
+          "text": "Odráža najmä svetlo farby, ktorá je komplementárna k červenej farbe",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-130",
+      "category": 9,
+      "question": "Pri vnútornom fotoelektrickom jave voľné elektróny v polovodiči spôsobujú:",
+      "statements": [
+        {
+          "text": "Zvýšenie elektrickej vodivosti polovodiča",
+          "correct": true
+        },
+        {
+          "text": "Zníženie elektrického odporu polovodiča",
+          "correct": true
+        },
+        {
+          "text": "Zvýšenie emisie viditeľného svetla",
+          "correct": false
+        },
+        {
+          "text": "Zníženie emisie gama žiarenia",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-131",
+      "category": 9,
+      "question": "Jav, pri ktorom sa z povrchu materiálu po dopade elektromagnetického žiarenia uvoľňujú elektróny, nazývame:",
+      "statements": [
+        {
+          "text": "Vonkajší fotoelektrický jav",
+          "correct": true
+        },
+        {
+          "text": "Vnútorný fotoelektrický jav",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-132",
+      "category": 9,
+      "question": "Osvetlenie s hodnotou 10 luxov znamená, že:",
+      "statements": [
+        {
+          "text": "Na 1 m² plochy dopadá svetelný tok 10 lm",
+          "correct": true
+        },
+        {
+          "text": "Na 1 cm² plochy dopadá svetelný tok 10 lm",
+          "correct": false
+        },
+        {
+          "text": "Svetelný zdroj s výkonom 10 W je vzdialený 1 m",
+          "correct": false
+        },
+        {
+          "text": "Svetelný zdroj s výkonom 1 W je vzdialený 10 cm",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-133",
+      "category": 9,
+      "question": "Osvetlenie s hodnotou 100 luxov znamená, že:",
+      "statements": [
+        {
+          "text": "Na 1 m² plochy dopadá svetelný tok 100 lm",
+          "correct": true
+        },
+        {
+          "text": "Na 1 cm² plochy dopadá svetelný tok 100 lm",
+          "correct": false
+        },
+        {
+          "text": "Na 1 m² plochy dopadá svietivosť 100 cd",
+          "correct": false
+        },
+        {
+          "text": "Na 1 cm² plochy dopadá svietivosť 100 cd",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-134",
+      "category": 9,
+      "question": "Osvetlenie s rastúcou vzdialenosťou od zdroja svetla:",
+      "statements": [
+        {
+          "text": "Rastie lineárne",
+          "correct": false
+        },
+        {
+          "text": "Klesá so štvorcom vzdialenosti",
+          "correct": true
+        },
+        {
+          "text": "Ostáva rovnaké",
+          "correct": false
+        },
+        {
+          "text": "Klesá lineárne",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-135",
+      "category": 9,
+      "question": "Osvetlenie s rastúcou vzdialenosťou od zdroja svetla:",
+      "statements": [
+        {
+          "text": "Rastie",
+          "correct": false
+        },
+        {
+          "text": "Klesá",
+          "correct": true
+        },
+        {
+          "text": "Ostáva rovnaké",
+          "correct": false
+        },
+        {
+          "text": "Sa periodicky mení",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-136",
+      "category": 9,
+      "question": "V laboratóriu by malo osvetlenie podľa normy dosahovať hodnotu približne:",
+      "statements": [
+        {
+          "text": "10 luxov",
+          "correct": false
+        },
+        {
+          "text": "10 000 lumenov",
+          "correct": false
+        },
+        {
+          "text": "500 luxov",
+          "correct": true
+        },
+        {
+          "text": "500 lumenov",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-137",
+      "category": 9,
+      "question": "Najväčšiu energiu má (z uvedených možností) fotón s frekvenciou:",
+      "statements": [
+        {
+          "text": "1 Hz",
+          "correct": false
+        },
+        {
+          "text": "100 kHz",
+          "correct": false
+        },
+        {
+          "text": "500 MHz",
+          "correct": true
+        },
+        {
+          "text": "5 Hz",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-138",
+      "category": 9,
+      "question": "Svetlo je:",
+      "statements": [
+        {
+          "text": "Rovnaký typ vlnenia ako ultrazvukové",
+          "correct": false
+        },
+        {
+          "text": "Prúd elektrónov",
+          "correct": false
+        },
+        {
+          "text": "Prúd fotónov",
+          "correct": true
+        },
+        {
+          "text": "Prúd neutrónov",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-139",
+      "category": 9,
+      "question": "Z uvedených možností má najväčšiu energiu fotón s vlnovou dĺžkou:",
+      "statements": [
+        {
+          "text": "1 m",
+          "correct": false
+        },
+        {
+          "text": "100 nm",
+          "correct": true
+        },
+        {
+          "text": "500 nm",
+          "correct": false
+        },
+        {
+          "text": "5 m",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-140",
+      "category": 9,
+      "question": "Z uvedených častí elektromagnetického spektra má najdlhšie vlnové dĺžky:",
+      "statements": [
+        {
+          "text": "Infračervené žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Ultrafialové žiarenie",
+          "correct": false
+        },
+        {
+          "text": "Viditeľné svetlo",
+          "correct": false
+        },
+        {
+          "text": "RTG žiarenie",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-141",
+      "category": 9,
+      "question": "Z uvedených častí/oblastí elektromagnetického spektra obsahuje fotóny s najkratšími vlnovými dĺžkami:",
+      "statements": [
+        {
+          "text": "Infračervené žiarenie",
+          "correct": false
+        },
+        {
+          "text": "Ultrafialové žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Viditeľné svetlo",
+          "correct": false
+        },
+        {
+          "text": "Rádiové vlny",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-142",
+      "category": 9,
+      "question": "Z uvedených častí/oblastí elektromagnetického spektra má najvyššiu energiu:",
+      "statements": [
+        {
+          "text": "Infračervené žiarenie",
+          "correct": false
+        },
+        {
+          "text": "Ultrafialové žiarenie",
+          "correct": true
+        },
+        {
+          "text": "Viditeľné svetlo",
+          "correct": false
+        },
+        {
+          "text": "Rádiové vlny",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-143",
+      "category": 9,
+      "question": "Prístroj určený na meranie intenzity osvetlenia sa volá:",
+      "statements": [
+        {
+          "text": "Luxmeter",
+          "correct": true
+        },
+        {
+          "text": "Optotyp",
+          "correct": false
+        },
+        {
+          "text": "Voltmeter",
+          "correct": false
+        },
+        {
+          "text": "Refraktometer",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-144",
+      "category": 9,
+      "question": "Fotometrická fyzikálna jednotka, ktorá patrí medzi základné jednotky v sústave SI, je:",
+      "statements": [
+        {
+          "text": "Lumen",
+          "correct": false
+        },
+        {
+          "text": "Lux",
+          "correct": false
+        },
+        {
+          "text": "Watt",
+          "correct": false
+        },
+        {
+          "text": "Candela",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-145",
+      "category": 9,
+      "question": "Fotometrická fyzikálna veličina, ktorá má fyzikálnu jednotku kandela, je:",
+      "statements": [
+        {
+          "text": "Svetelný výkon",
+          "correct": false
+        },
+        {
+          "text": "Svetelný tok",
+          "correct": false
+        },
+        {
+          "text": "Svietivosť",
+          "correct": true
+        },
+        {
+          "text": "Osvetlenie",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-146",
+      "category": 9,
+      "question": "Výsledkom vonkajšieho fotoelektrického javu je:",
+      "statements": [
+        {
+          "text": "Uvoľňovanie elektrónov z materiálu",
+          "correct": true
+        },
+        {
+          "text": "Schopnosť elektrónov voľne sa pohybovať v materiáli",
+          "correct": false
+        },
+        {
+          "text": "Zníženie vodivosti materiálu",
+          "correct": false
+        },
+        {
+          "text": "Schopnosť protónov voľne sa pohybovať v materiáli",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-147",
+      "category": 9,
+      "question": "Výsledkom vnútorného fotoelektrického javu je:",
+      "statements": [
+        {
+          "text": "Uvoľňovanie elektrónov z materiálu",
+          "correct": false
+        },
+        {
+          "text": "Schopnosť elektrónov voľne sa pohybovať v materiáli",
+          "correct": true
+        },
+        {
+          "text": "Zníženie vodivosti materiálu",
+          "correct": false
+        },
+        {
+          "text": "Schopnosť protónov voľne sa pohybovať v materiáli",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-148",
+      "category": 9,
+      "question": "Fyzikálnou jednotkou svetelného toku je:",
+      "statements": [
+        {
+          "text": "Lumen",
+          "correct": true
+        },
+        {
+          "text": "Lux",
+          "correct": false
+        },
+        {
+          "text": "Watt",
+          "correct": false
+        },
+        {
+          "text": "Candela",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-159",
+      "category": 9,
+      "question": "Jav, pri ktorom v materiáli po dopade elektromagnetického žiarenia vznikajú voľné elektróny, nazývame:",
+      "statements": [
+        {
+          "text": "Vonkajší fotoelektrický jav",
+          "correct": false
+        },
+        {
+          "text": "Vnútorný fotoelektrický jav",
+          "correct": true
+        },
+        {
+          "text": "Difúzia",
+          "correct": false
+        },
+        {
+          "text": "Osmóza",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-195",
+      "category": 9,
+      "question": "Podľa sústavy SI je lux (lx):",
+      "statements": [
+        {
+          "text": "Základná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Odvodená jednotka",
+          "correct": true
+        },
+        {
+          "text": "Násobná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Bezrozmerná jednotka",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-203",
+      "category": 9,
+      "question": "Na obrázku je zobrazený/á:",
+      "statements": [
+        {
+          "text": "Spojnicový graf",
+          "correct": false
+        },
+        {
+          "text": "Závislosť E od d",
+          "correct": true
+        },
+        {
+          "text": "Pokles osvetlenia so zvyšujúcou sa vzdialenosťou od zdroja svetla",
+          "correct": true
+        },
+        {
+          "text": "Exponenciálna funkcia",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-204",
+      "category": 9,
+      "question": "Na obrázku je zobrazený/á:",
+      "statements": [
+        {
+          "text": "Závislosť d od E",
+          "correct": false
+        },
+        {
+          "text": "Bodový graf s trendovou krivkou",
+          "correct": true
+        },
+        {
+          "text": "Stĺpcový graf s trendovou krivkou",
+          "correct": false
+        },
+        {
+          "text": "Pokles osvetlenia s časom",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-269",
+      "category": 9,
+      "question": "Vonkajší fotoelektrický jav:",
+      "statements": []
+    },
+    {
+      "id": "M1-279",
+      "category": 9,
+      "question": "Frekvencie viditeľného svetla sú:",
+      "statements": [
+        {
+          "text": "Menšie ako UV",
+          "correct": true
+        },
+        {
+          "text": "Menšie ako mikrovĺn",
+          "correct": false
+        },
+        {
+          "text": "Menšie ako IR",
+          "correct": false
+        },
+        {
+          "text": "Väčšie ako UV",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-77",
+      "category": 10,
+      "question": "Aritmetický priemer x̄ súboru hodnôt s rozsahom n vypočítame podľa vzťahu:",
+      "statements": [
+        {
+          "text": "x̄ = (1/n) · Σᵢ₌₁ⁿ xᵢ",
+          "correct": true
+        },
+        {
+          "text": "x̄ = [1/(n − 1)] · Σᵢ₌₁ⁿ xᵢ",
+          "correct": false
+        },
+        {
+          "text": "x̄ = Σᵢ₌₁ⁿ n · (1/xᵢ)",
+          "correct": false
+        },
+        {
+          "text": "x̄ = Σᵢ₌₁ⁿ (n − 1) · xᵢ",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-79",
+      "category": 10,
+      "question": "Pre uvedené fyzikálne jednotky platí:",
+      "statements": [
+        {
+          "text": "1 Ω = 1 V/A",
+          "correct": true
+        },
+        {
+          "text": "1 J = 1 kg² · m² · s⁻²",
+          "correct": false
+        },
+        {
+          "text": "1 J = 1 N · m",
+          "correct": true
+        },
+        {
+          "text": "1 W = 1 J · s",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-82",
+      "category": 10,
+      "question": "V dvojrozmernej pravouhlej súradnicovej sústave pri grafickom znázornení údajov:",
+      "statements": [
+        {
+          "text": "Horizontálna os reprezentuje nezávislú premennú",
+          "correct": true
+        },
+        {
+          "text": "Vertikálna os predstavuje nezávislú premennú",
+          "correct": false
+        },
+        {
+          "text": "Súradnicové osi zvierajú uhol 180°",
+          "correct": false
+        },
+        {
+          "text": "Súradnicové osi spravidla nazývame a a b",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-179",
+      "category": 10,
+      "question": "Hmotnosť pacienta je 50 kg, absolútna neistota merania sú 2 kg. Relatívna neistota merania je:",
+      "statements": [
+        {
+          "text": "0,04 kg",
+          "correct": false
+        },
+        {
+          "text": "2 %",
+          "correct": false
+        },
+        {
+          "text": "0,25",
+          "correct": false
+        },
+        {
+          "text": "0,04",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-180",
+      "category": 10,
+      "question": "Absolútna neistota merania Δx:",
+      "statements": [
+        {
+          "text": "Je vždy bezrozmerná",
+          "correct": false
+        },
+        {
+          "text": "Sa vyjadruje v percentách",
+          "correct": false
+        },
+        {
+          "text": "Sa udáva v rovnakých jednotkách ako meraná fyzikálna veličina",
+          "correct": true
+        },
+        {
+          "text": "Je vždy menšia ako 10 % nameranej hodnoty",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-181",
+      "category": 10,
+      "question": "Jedna tona je ekvivalentom:",
+      "statements": [
+        {
+          "text": "10⁹ mg",
+          "correct": true
+        },
+        {
+          "text": "10¹² μg",
+          "correct": true
+        },
+        {
+          "text": "10 · 10² kg",
+          "correct": true
+        },
+        {
+          "text": "10¹² ng",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-182",
+      "category": 10,
+      "question": "Keď vynásobíme 1 nJ číslom 10¹⁸, získame:",
+      "statements": [
+        {
+          "text": "10⁶ J",
+          "correct": false
+        },
+        {
+          "text": "10⁶ kJ",
+          "correct": true
+        },
+        {
+          "text": "10⁹ kJ",
+          "correct": false
+        },
+        {
+          "text": "1 kJ",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-183",
+      "category": 10,
+      "question": "Jedna tona je ekvivalentom:",
+      "statements": [
+        {
+          "text": "100 kg",
+          "correct": false
+        },
+        {
+          "text": "10³ kg",
+          "correct": true
+        },
+        {
+          "text": "10 · 10⁸ μg",
+          "correct": false
+        },
+        {
+          "text": "10⁹ ng",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-184",
+      "category": 10,
+      "question": "Keď vynásobíme 1 nJ číslom 10¹⁸, získame:",
+      "statements": [
+        {
+          "text": "1 MJ",
+          "correct": false
+        },
+        {
+          "text": "1 GJ",
+          "correct": true
+        },
+        {
+          "text": "10⁹ J",
+          "correct": true
+        },
+        {
+          "text": "10³ MJ",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-185",
+      "category": 10,
+      "question": "Pre uvedené fyzikálne jednotky platí:",
+      "statements": [
+        {
+          "text": "1 Ω = 1 V · A",
+          "correct": false
+        },
+        {
+          "text": "1 N = 1 kg · m · s⁻²",
+          "correct": true
+        },
+        {
+          "text": "1 W = 1 J · s⁻¹",
+          "correct": true
+        },
+        {
+          "text": "1 Pa = 1 kg · m⁻¹ · s⁻²",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-187",
+      "category": 10,
+      "question": "Správne uvedená jednotka je pri veličine:",
+      "statements": [
+        {
+          "text": "Napätie [Ω]",
+          "correct": false
+        },
+        {
+          "text": "Koncentrácia [mol]",
+          "correct": false
+        },
+        {
+          "text": "Elektrický náboj [A]",
+          "correct": false
+        },
+        {
+          "text": "Teplo [J]",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-188",
+      "category": 10,
+      "question": "Správne uvedená jednotka je pri veličine:",
+      "statements": [
+        {
+          "text": "Elektrické napätie [V]",
+          "correct": true
+        },
+        {
+          "text": "Látkové množstvo [mol]",
+          "correct": true
+        },
+        {
+          "text": "Elektrický náboj [C]",
+          "correct": true
+        },
+        {
+          "text": "Teplo [K]",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-189",
+      "category": 10,
+      "question": "Medzi jednotky sústavy SI patria:",
+      "statements": [
+        {
+          "text": "Meter, joule, kalória",
+          "correct": false
+        },
+        {
+          "text": "Sekunda, ampér, newton",
+          "correct": true
+        },
+        {
+          "text": "Mol, kilogram, sekunda",
+          "correct": true
+        },
+        {
+          "text": "Ampér, watt, kilogram",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-190",
+      "category": 10,
+      "question": "Medzi jednotky sústavy SI patria:",
+      "statements": [
+        {
+          "text": "Kilogram, kelvin, hodina",
+          "correct": false
+        },
+        {
+          "text": "Gram, newton, sekunda",
+          "correct": true
+        },
+        {
+          "text": "Volt, ampér, meter",
+          "correct": true
+        },
+        {
+          "text": "Meter, mol, radián",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-191",
+      "category": 10,
+      "question": "Medzi základné jednotky sústavy SI patria:",
+      "statements": [
+        {
+          "text": "Ω, J, kg",
+          "correct": false
+        },
+        {
+          "text": "cd, °C, kg",
+          "correct": false
+        },
+        {
+          "text": "g, m, s",
+          "correct": false
+        },
+        {
+          "text": "A, V, W",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-192",
+      "category": 10,
+      "question": "Medzi základné jednotky sústavy SI patria:",
+      "statements": [
+        {
+          "text": "m, kg, s",
+          "correct": true
+        },
+        {
+          "text": "s, mol, J",
+          "correct": false
+        },
+        {
+          "text": "kg, s, cd",
+          "correct": true
+        },
+        {
+          "text": "s, K, mol",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-193",
+      "category": 10,
+      "question": "Medzi základné jednotky sústavy SI patria:",
+      "statements": [
+        {
+          "text": "kg, V, J",
+          "correct": false
+        },
+        {
+          "text": "A, °C, kg",
+          "correct": false
+        },
+        {
+          "text": "m, cd, s",
+          "correct": true
+        },
+        {
+          "text": "s, mol, A",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-194",
+      "category": 10,
+      "question": "Medzi základné jednotky sústavy SI patria:",
+      "statements": [
+        {
+          "text": "K, kg, s",
+          "correct": true
+        },
+        {
+          "text": "cm, s, A",
+          "correct": false
+        },
+        {
+          "text": "kg, s, Hz",
+          "correct": false
+        },
+        {
+          "text": "J, N, A",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-202",
+      "category": 10,
+      "question": "Pre zobrazený graf platí:",
+      "statements": [
+        {
+          "text": "Najčastejšie sa vyskytujúcou farbou očí v sledovanom súbore je zelená",
+          "correct": false
+        },
+        {
+          "text": "Viac ako polovica študentov má modré oči",
+          "correct": false
+        },
+        {
+          "text": "Menej ako štvrtina študentov má modré oči",
+          "correct": true
+        },
+        {
+          "text": "Najčastejšie sa vyskytujúcou farbou očí v sledovanom súbore je hnedá",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-205",
+      "category": 10,
+      "question": "Platí:",
+      "statements": [
+        {
+          "text": "Na obrázku je stĺpcový graf",
+          "correct": true
+        },
+        {
+          "text": "Na obrázku je histogram",
+          "correct": false
+        },
+        {
+          "text": "Výška stĺpca predstavuje priemernú hodnotu",
+          "correct": true
+        },
+        {
+          "text": "Chybové úsečky predstavujú smerodajnú odchýlku",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-206",
+      "category": 10,
+      "question": "Platí:",
+      "statements": [
+        {
+          "text": "Na horizontálnej osi grafu je zobrazená výška v cm",
+          "correct": false
+        },
+        {
+          "text": "Na vertikálnej osi grafu je zobrazená výška v m",
+          "correct": false
+        },
+        {
+          "text": "Výška stĺpca predstavuje početnosť sledovaných skupín",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-207",
+      "category": 10,
+      "question": "Z grafu vyplýva, že v sledovanom súbore študentov je:",
+      "statements": [
+        {
+          "text": "Priemerná výška mužov väčšia ako priemerná výška žien",
+          "correct": true
+        },
+        {
+          "text": "Priemerná výška žien väčšia ako priemerná výška mužov",
+          "correct": false
+        },
+        {
+          "text": "Smerodajná odchýlka výšky je väčšia u mužov ako u žien",
+          "correct": true
+        },
+        {
+          "text": "Smerodajná odchýlka výšky je väčšia u žien ako u mužov",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-208",
+      "category": 10,
+      "question": "Premenné vyjadrené číselne, ktoré nadobúdajú len určité izolované hodnoty, v štatistike nazývame:",
+      "statements": [
+        {
+          "text": "Kvalitatívne ordinálne",
+          "correct": false
+        },
+        {
+          "text": "Kvalitatívne nominálne",
+          "correct": false
+        },
+        {
+          "text": "Kvantitatívne diskrétne",
+          "correct": true
+        },
+        {
+          "text": "Kvantitatívne spojité",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-209",
+      "category": 10,
+      "question": "Premenné vyjadrené číselne, ktoré nadobúdajú ľubovoľné hodnoty z určitého intervalu, v štatistike označujeme:",
+      "statements": [
+        {
+          "text": "Kvalitatívne ordinálne",
+          "correct": false
+        },
+        {
+          "text": "Kvalitatívne nominálne",
+          "correct": false
+        },
+        {
+          "text": "Kvantitatívne diskrétne",
+          "correct": false
+        },
+        {
+          "text": "Kvantitatívne spojité",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-210",
+      "category": 10,
+      "question": "Premenné vyjadrené slovne, na ktorých poradí pri štatistickom spracovaní záleží, nazývame:",
+      "statements": [
+        {
+          "text": "Kvalitatívne ordinálne",
+          "correct": true
+        },
+        {
+          "text": "Kvalitatívne nominálne",
+          "correct": false
+        },
+        {
+          "text": "Kvantitatívne diskrétne",
+          "correct": false
+        },
+        {
+          "text": "Kvantitatívne spojité",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-213",
+      "category": 10,
+      "question": "Podľa sústavy SI je kilohertz (kHz):",
+      "statements": [
+        {
+          "text": "Základná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Odvodená jednotka",
+          "correct": true
+        },
+        {
+          "text": "Násobná jednotka",
+          "correct": true
+        },
+        {
+          "text": "Bezrozmerná jednotka",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-215",
+      "category": 10,
+      "question": "Podľa sústavy SI je radián (rad):",
+      "statements": [
+        {
+          "text": "Základná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Odvodená jednotka",
+          "correct": true
+        },
+        {
+          "text": "Násobná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Bezrozmerná jednotka",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-217",
+      "category": 10,
+      "question": "Podľa sústavy SI je kelvin (K):",
+      "statements": [
+        {
+          "text": "Základná jednotka",
+          "correct": true
+        },
+        {
+          "text": "Odvodená jednotka",
+          "correct": false
+        },
+        {
+          "text": "Násobná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Bezrozmerná jednotka",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-218",
+      "category": 10,
+      "question": "Podľa sústavy SI je kilogram (kg):",
+      "statements": [
+        {
+          "text": "Základná jednotka",
+          "correct": true
+        },
+        {
+          "text": "Odvodená jednotka",
+          "correct": false
+        },
+        {
+          "text": "Násobná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Bezrozmerná jednotka",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-219",
+      "category": 10,
+      "question": "Podľa sústavy SI je kilometer (km):",
+      "statements": [
+        {
+          "text": "Základná jednotka",
+          "correct": false
+        },
+        {
+          "text": "Odvodená jednotka",
+          "correct": false
+        },
+        {
+          "text": "Násobná jednotka",
+          "correct": true
+        },
+        {
+          "text": "Bezrozmerná jednotka",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-221",
+      "category": 10,
+      "question": "Najčastejšie sa vyskytujúca hodnota v štatistickom súbore sa nazýva:",
+      "statements": [
+        {
+          "text": "Medián",
+          "correct": false
+        },
+        {
+          "text": "Modus",
+          "correct": true
+        },
+        {
+          "text": "Vážený priemer",
+          "correct": false
+        },
+        {
+          "text": "Médium",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "id": "M1-248",
+      "category": 10,
+      "question": "Typ dát sprostredkovaný slovami, pri ktorých je poradie dôležité pre štatistickú evaluáciu, je:",
+      "statements": [
+        {
+          "text": "Kvalitatívne ordinálne",
+          "correct": true
+        }
+      ]
+    },
+    {
+      "id": "M1-281",
+      "category": 10,
+      "question": "Na obrázku je zobrazený graf rozdelenia obvodov pásu študentov. Platí:",
+      "statements": [
+        {
+          "text": "Histogram",
+          "correct": true
+        },
+        {
+          "text": "Nomogram",
+          "correct": false
+        },
+        {
+          "text": "Polygón frekvencií",
+          "correct": false
+        },
+        {
+          "text": "Ukazuje frekvenciu mier obvodu pásu v triedach",
+          "correct": true
+        }
+      ]
+    }
+  ]
+}</script><script>'use strict';
+(() => {
+const DATA=JSON.parse(document.getElementById('quiz-data').textContent);
+const questions=DATA.questions, categories=DATA.categories;
+const byId=new Map(questions.map(q=>[q.id,q]));
+const KEY='biofyzika-281-v1';
+let bookmarks=new Set(), session=null, screen='home', pendingConfirm=null;
+const $=id=>document.getElementById(id);
+const validItems=q=>q.statements.filter(o=>typeof o.correct==='boolean');
+const usable=q=>q.statements.length>0 && validItems(q).length===q.statements.length;
+const categoryName=id=>categories.find(c=>c.id===id)?.name || 'Všetky témy';
+function storageWarning(){ $('storage-warning').hidden=false;$('storage-warning').textContent='Prehliadač momentálne neumožňuje uloženie. Precvičovanie funguje, ale po zatvorení sa nové odpovede a problémové otázky nemusia zachovať.'; }
+function save(){try{localStorage.setItem(KEY,JSON.stringify({version:1,bookmarks:[...bookmarks],session}));}catch(e){storageWarning();}}
+function restore(){try{const data=JSON.parse(localStorage.getItem(KEY)||'null');if(!data||data.version!==1)return;bookmarks=new Set((Array.isArray(data.bookmarks)?data.bookmarks:[]).filter(id=>byId.has(id)));const s=data.session;if(!s||!Array.isArray(s.ids)||!['learn','test'].includes(s.mode))return;const ids=[...new Set(s.ids.filter(id=>byId.has(id)))];if(!ids.length)return;const answers={},evaluated={};for(const id of ids){const q=byId.get(id),a=s.answers?.[id];answers[id]=q.statements.map((_,i)=>typeof a?.[i]==='boolean'?a[i]:null);evaluated[id]=!!s.evaluated?.[id];}const orders={};for(const id of ids){const count=byId.get(id).statements.length,order=s.orders?.[id];orders[id]=Array.isArray(order)&&order.length===count&&new Set(order).size===count&&order.every(i=>Number.isInteger(i)&&i>=0&&i<count)?order:Array.from({length:count},(_,i)=>i);}session={ids,answers,evaluated,orders,index:Math.min(ids.length-1,Math.max(0,Number.isInteger(s.index)?s.index:0)),mode:s.mode,title:typeof s.title==='string'?s.title:'Všetky témy',done:!!s.done,problems:!!s.problems,deadline:Number.isFinite(s.deadline)&&s.deadline>0?s.deadline:null,timedOut:!!s.timedOut};}catch(e){storageWarning();}}
+function show(name){screen=name;for(const n of ['home','quiz','results'])$(n+'-screen').hidden=n!==name;window.scrollTo({top:0,behavior:'instant'});}
+function message(text){$('message-text').textContent=text;$('message-dialog').showModal();}
+function current(){return session?byId.get(session.ids[session.index]):null;}
+function getAnswers(q){return session.answers[q.id]||Array(q.statements.length).fill(null);}
+function score(ids=session.ids){let correct=0,total=0,unanswered=0,complete=0,skipped=0;for(const id of ids){const q=byId.get(id);if(!usable(q)){skipped++;continue;}const a=getAnswers(q);let perfect=true;for(let i=0;i<q.statements.length;i++){total++;if(typeof a[i]!=='boolean')unanswered++;if(a[i]===q.statements[i].correct)correct++;else perfect=false;}if(perfect)complete++;}return {correct,total,unanswered,complete,skipped};}
+function filledQuestions(){return session.ids.filter(id=>{const q=byId.get(id);return usable(q)&&getAnswers(q).every(a=>typeof a==='boolean');}).length;}
+function button(text,action,cls=''){const b=document.createElement('button');b.type='button';b.textContent=text;b.className=cls;b.onclick=action;return b;}
+function home(){show('home');renderHome();}
+function renderHome(){ $('saved-count').textContent=bookmarks.size;const grid=$('category-grid');grid.replaceChildren();for(const c of categories){const qs=questions.filter(q=>q.category===c.id),saved=qs.filter(q=>bookmarks.has(q.id));const card=document.createElement('section');card.className='category-card';const label=document.createElement('span');label.className='eyebrow';label.textContent='TÉMA '+String(c.id).padStart(2,'0')+' · '+qs.length+' otázok';const title=document.createElement('h2');title.textContent=c.name;const actions=document.createElement('div');actions.className='card-actions';actions.append(button('Začať →',()=>start(qs.map(q=>q.id),c.name,false),'primary'),button('★ Problémové ('+saved.length+')',()=>start(saved.map(q=>q.id),c.name,true)));card.append(label,title,actions);grid.append(card);}$('resume-panel').hidden=!session;if(session){$('resume-label').textContent=(session.done?'Posledný výsledok: ':'Rozpracované: ')+session.title+(!session.done?' · otázka '+(session.index+1)+' z '+session.ids.length:'');$('resume').textContent=session.done?'Pozrieť výsledky →':'Pokračovať →';}}
+function shuffled(ids){const out=[...ids];for(let i=out.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[out[i],out[j]]=[out[j],out[i]];}return out;}
+function start(ids,title,problems,overrideMode){if(!ids.length){message('V tejto skupine zatiaľ nemáš žiadne problémové otázky. Počas precvičovania ich pridáš tlačidlom „Uložiť medzi problémové“.');return;}let selected=$('shuffle').checked?shuffled(ids):[...ids];const limit=$('amount').value;if(limit!=='all')selected=selected.slice(0,Number(limit));const mode=overrideMode||$('mode').value;const minutes=Number($('minutes').value);const randomOptions=$('shuffle-options').checked;const begin=()=>{const orders={};for(const id of selected){const indices=byId.get(id).statements.map((_,i)=>i);orders[id]=randomOptions?shuffled(indices):indices;}session={orders,ids:selected,index:0,answers:{},evaluated:{},mode,title,problems,done:false,deadline:mode==='test'&&minutes>0?Date.now()+minutes*60000:null,timedOut:false};save();show('quiz');renderQuiz();};if(session&&!session.done&&Object.keys(session.answers).length){$('dialog-title').textContent='Začať nové precvičovanie?';$('dialog-text').textContent='Nahradí rozpracované odpovede. Uložené problémové otázky zostanú zachované.';$('dialog-confirm').textContent='Začať nové';pendingConfirm=begin;$('confirm-dialog').showModal();}else begin();}
+function status(){const q=current();if(!q)return;const a=getAnswers(q),filled=a.filter(x=>typeof x==='boolean').length;const revealed=session.done||session.evaluated[q.id];$('question-status').textContent=!usable(q)?'Neúplná otázka':revealed?'Vyhodnotené':filled===0?'Ešte nezodpovedané':filled===q.statements.length?'Zodpovedané':'Vyplnené '+filled+' z '+q.statements.length;$('answered-count').textContent='Zodpovedané otázky: '+filledQuestions()+' / '+session.ids.filter(id=>usable(byId.get(id))).length;}
+function updateBookmark(){const q=current(),saved=bookmarks.has(q.id);$('bookmark').textContent=saved?'★ Uložené medzi problémovými':'☆ Uložiť medzi problémové';$('bookmark').classList.toggle('saved',saved);$('bookmark').setAttribute('aria-pressed',String(saved));}
+function renderQuiz(){const q=current();if(!q)return home();const a=getAnswers(q),reveal=session.done||!!session.evaluated[q.id],canScore=usable(q);$('session-kind').textContent=session.done?'Kontrola odpovedí':session.mode==='test'?'Test':'Učenie';$('topic').textContent=(session.problems?'★ Problémové · ':'')+session.title;$('question-number').textContent='Otázka '+(session.index+1);$('question-max').textContent=canScore?q.statements.length:'—';$('question').textContent=q.question;$('counter').textContent=(session.index+1)+' z '+session.ids.length;$('progress-label').textContent='Otázka '+(session.index+1)+' z '+session.ids.length;$('question-progress').max=session.ids.length;$('question-progress').value=session.index+1;$('incomplete').hidden=canScore;$('answer-table').hidden=!q.statements.length;$('statements').replaceChildren();for(const i of (session.orders?.[q.id]||q.statements.map((_,i)=>i))){const o=q.statements[i],tr=document.createElement('tr');if(reveal&&canScore)tr.className=a[i]===o.correct?'good':'bad';for(const value of [true,false]){const td=document.createElement('td'),label=document.createElement('label'),input=document.createElement('input');label.className='answer-label';input.type='radio';input.name='answer-'+q.id+'-'+i;input.value=String(value);input.checked=a[i]===value;input.disabled=reveal||!canScore;input.setAttribute('aria-label',(value?'Správne: ':'Nesprávne: ')+o.text);input.onchange=()=>{const next=[...getAnswers(q)];next[i]=value;session.answers[q.id]=next;save();status();$('feedback').textContent='';};label.append(input);if(reveal&&canScore&&a[i]!==o.correct&&value===o.correct){input.className='correct-answer-ring';}td.append(label);tr.append(td);}const td=document.createElement('td');td.className='statement';td.textContent=o.text;if(reveal&&canScore){const hint=document.createElement('span');hint.className='row-feedback';hint.textContent=(a[i]===o.correct?'✓ Správne zodpovedané':(typeof a[i]!=='boolean'?'— Nezodpovedané. ':'✕ ')+'Správna odpoveď: '+(o.correct?'Správne':'Nesprávne'));td.append(hint);}tr.append(td);$('statements').append(tr);}
+$('evaluate').hidden=session.mode==='test'||session.done||!canScore;$('evaluate').disabled=reveal;$('feedback').textContent=reveal&&canScore?'Výsledok otázky: '+q.statements.filter((o,i)=>a[i]===o.correct).length+' / '+q.statements.length+' správnych tvrdení.':'';$('source-comment').hidden=!q.comment||!reveal;$('source-comment').textContent=q.comment||'';$('previous').disabled=session.index===0;$('next').textContent=session.index===session.ids.length-1?(session.done?'Späť na výsledky':'Ukončiť precvičovanie →'):'Ďalšia otázka →';$('finish').hidden=session.done;$('return-results').hidden=!session.done;$('finish').textContent=session.mode==='test'?'Odovzdať test':'Ukončiť a zobraziť výsledky';updateBookmark();status();tick();}
+function evaluate(){const q=current();if(!usable(q)||session.done)return;session.evaluated[q.id]=true;save();renderQuiz();}
+function finish(timedOut=false){if(!session)return;session.done=true;session.timedOut=timedOut;save();show('results');renderResults();}
+function requestFinish(){const stats=score();$('dialog-title').textContent=session.mode==='test'?'Odovzdať test?':'Ukončiť precvičovanie?';$('dialog-text').textContent=stats.unanswered?'Zostáva '+stats.unanswered+' nezodpovedaných tvrdení. Vo výsledku nebudú započítané ako správne.':'Po odovzdaní uvidíš výsledok a správne odpovede podľa zdrojového súboru.';$('dialog-confirm').textContent='Odovzdať';pendingConfirm=()=>finish();$('confirm-dialog').showModal();}
+function renderResults(){const r=score();$('results-mode').textContent=session.mode==='test'?'Test':'Učenie';$('result-topic').textContent=session.title+(session.problems?' · problémové otázky':'');$('score').textContent=r.total?Math.round(r.correct/r.total*100)+' %':'Bez hodnotiteľných tvrdení';$('score-details').textContent=r.correct+' / '+r.total+' správnych tvrdení';$('result-extra').textContent=(session.timedOut?'Časový limit uplynul. ':'')+'Úplne správne otázky: '+r.complete+' / '+(session.ids.length-r.skipped)+'. Nezodpovedané tvrdenia: '+r.unanswered+'.'+(r.skipped?' Neúplné otázky mimo skóre: '+r.skipped+'.':'');const target=$('result-categories');target.replaceChildren();const table=document.createElement('table');table.className='result-table';const head=document.createElement('thead');const row=document.createElement('tr');for(const text of ['Téma','Správne tvrdenia']){const th=document.createElement('th');th.textContent=text;th.scope='col';row.append(th);}head.append(row);table.append(head);const body=document.createElement('tbody');for(const c of categories){const ids=session.ids.filter(id=>byId.get(id).category===c.id);if(!ids.length)continue;const stats=score(ids),tr=document.createElement('tr');for(const text of [c.name,stats.total?stats.correct+' / '+stats.total:'Bez skóre']){const td=document.createElement('td');td.textContent=text;tr.append(td);}body.append(tr);}table.append(body);target.append(table);}
+function tick(){if(!session)return;$('timer').hidden=session.mode!=='test'||session.done;if(session.done)return;if(!session.deadline){$('timer').textContent='Bez časového limitu';$('timer').classList.remove('urgent');return;}const seconds=Math.max(0,Math.ceil((session.deadline-Date.now())/1000));$('timer').textContent='Zvyšný čas '+String(Math.floor(seconds/60)).padStart(2,'0')+':'+String(seconds%60).padStart(2,'0');$('timer').classList.toggle('urgent',seconds<60);if(seconds===0){if(screen==='quiz')finish(true);else{session.done=true;session.timedOut=true;save();renderHome();}}}
+$('brand').onclick=home;$('main-tab').onclick=home;$('back').onclick=home;$('results-home').onclick=home;
+$('mode').onchange=()=>{$('time-setting').hidden=$('mode').value!=='test';};
+$('start-all').textContent='Začať zo všetkých tém →';$('start-all').onclick=()=>start(questions.map(q=>q.id),'Všetky témy',false);
+$('global-problems').onclick=()=>start(questions.filter(q=>bookmarks.has(q.id)).map(q=>q.id),'Všetky témy',true);
+$('resume').onclick=()=>{if(session.done){show('results');renderResults();}else{show('quiz');renderQuiz();}};
+$('bookmark').onclick=()=>{const id=current().id;if(bookmarks.has(id))bookmarks.delete(id);else bookmarks.add(id);save();updateBookmark();};
+$('evaluate').onclick=evaluate;$('previous').onclick=()=>{if(session.index>0){session.index--;save();renderQuiz();}};$('next').onclick=()=>{if(session.index<session.ids.length-1){session.index++;save();renderQuiz();}else if(session.done){show('results');renderResults();}else requestFinish();};
+$('finish').onclick=requestFinish;$('return-results').onclick=()=>{show('results');renderResults();};
+$('dialog-cancel').onclick=()=>{$('confirm-dialog').close();pendingConfirm=null;};$('confirm-dialog').addEventListener('cancel',()=>{pendingConfirm=null;});$('dialog-confirm').onclick=()=>{const fn=pendingConfirm;pendingConfirm=null;$('confirm-dialog').close();if(fn)fn();};
+$('message-close').onclick=()=>$('message-dialog').close();
+$('review').onclick=()=>{session.index=0;save();show('quiz');renderQuiz();};
+$('retry').onclick=()=>{const {ids,title,problems,mode}=session;start(ids,title,problems,mode);};
+$('result-problems').onclick=()=>start(session.ids.filter(id=>bookmarks.has(id)),session.title,true,'learn');
+restore();renderHome();tick();setInterval(tick,1000);
+})();
+</script></body></html>
